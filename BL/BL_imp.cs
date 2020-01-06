@@ -116,6 +116,7 @@ namespace BL
         }
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
+            //Checks if there is an open invitation for this hosting unit
             var hostingUnitOreder = from order in GetOrders()
                                     where (order.HostingUnitKey == hostingUnit.key) &&
                                             (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
