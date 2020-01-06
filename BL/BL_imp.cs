@@ -163,14 +163,14 @@ namespace BL
         }
 
         //-----------------------gets--------------------------------
-        public List<GuestRequest> GetGuestRequests()
-        {
-            return dal.GetGuestRequests();
-        }
         public List<HostingUnit> getHostingUnits()
         {
             return dal.getHostingUnits();
         }
+        public List<GuestRequest> GetGuestRequests()
+        {
+            return dal.GetGuestRequests();
+        }       
         public List<Order> GetOrders()
         {
             return dal.GetOrders();
@@ -181,6 +181,17 @@ namespace BL
         }
 
         /*-------------------------------------------------*/
+        public List<HostingUnit> freeHostingUnits(DateTime dateTime, int day)
+        {
+            if (day <= 0)
+                throw new BLexception.CantUndeZeroException();
+
+            var list = from unit in getHostingUnits()
+                       where unit.AvailableOnDate(dateTime, day)
+                       select unit;
+
+            return list.ToList();
+        }
 
         public int daysBetween(DateTime date1, DateTime date2)
         {
@@ -197,19 +208,16 @@ namespace BL
             return (date - DateTime.Now).Days;
         }
 
-        public List<HostingUnit> freeHostingUnits(DateTime dateTime, int day)
+        public List<Order> timePast(int day)
         {
-            if (day <= 0)
-                throw new BLexception.CantUndeZeroException();
-
-            var list = from unit in getHostingUnits()
-                       where unit.AvailableOnDate(dateTime, day)
-                       select unit;
+            var list = from order in GetOrders()
+                       where (DateTime.Now - order.OrderDate).Days > day
+                       select order;
 
             return list.ToList();
         }
 
-        public List<GuestRequest> guestRequests(Func<GuestRequest, bool> func)
+        public List<GuestRequest> guestRequestByFunc(Func<GuestRequest, bool> func)
         {
             var list = from guestRequest in GetGuestRequests()
                        where func(guestRequest)
@@ -236,15 +244,6 @@ namespace BL
             return list.ToList().Count;
         }
 
-        public List<Order> timePast(int day)
-        {
-            var list = from order in GetOrders()
-                       where (DateTime.Now - order.OrderDate).Days > day
-                       select order;
-
-            return list.ToList();
-        }
-
         /*----------------------Grouping-----------------*/
         public IEnumerable<IGrouping<Location, GuestRequest>> GuestRequestByLocation()
         {
@@ -252,14 +251,6 @@ namespace BL
                                                                            group guestRequest by guestRequest.location;
             return guestRequests;
         }
-
-        public IEnumerable<IGrouping<Location, HostingUnit>> HostingUnitByLocation()
-        {
-            IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in getHostingUnits()
-                                                                         group hostingUnit by hostingUnit.location;
-            return hostingUnits;
-        }
-
         public IEnumerable<IGrouping<int, GuestRequest>> GuestRequestByVacationers()
         {
             IEnumerable<IGrouping<int, GuestRequest>> guestRequests = from guestRequest in GetGuestRequests()
@@ -273,6 +264,12 @@ namespace BL
 
             return hosts;
         }
+        public IEnumerable<IGrouping<Location, HostingUnit>> HostingUnitByLocation()
+        {
+            IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in getHostingUnits()
+                                                                         group hostingUnit by hostingUnit.location;
+            return hostingUnits;
+        }            
     }
 }
 

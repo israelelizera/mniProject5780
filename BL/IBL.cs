@@ -68,7 +68,7 @@ namespace BL
         /// </summary>
         /// <param name="func"></param>
         /// <returns></returns>
-        List<GuestRequest> guestRequests(Func<GuestRequest, bool> func);
+        List<GuestRequest> guestRequestByFunc(Func<GuestRequest, bool> func);
 
         /// <summary>
         /// A function that accepts customer demand and returns the number of orders sent to it
@@ -83,7 +83,7 @@ namespace BL
         /// </summary>
         /// <param name="guestRequest"></param>
         /// <returns></returns>
-        int OrdersSentOrClosed(GuestRequest guestRequest);
+        int OrdersSentOrClosed(HostingUnit guestRequest);
 
         //-----------------------Grouping--------------------
 

@@ -57,3 +57,17 @@ C:\Users\elize\Source\Repos\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.Asse
 C:\Users\elize\Source\Repos\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
 C:\Users\elize\Source\Repos\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.dll
 C:\Users\elize\Source\Repos\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.pdb
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\BE.dll
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\DS.dll
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\BE.pdb
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\bin\Debug\netstandard2.0\DS.pdb
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.pdb
