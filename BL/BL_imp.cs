@@ -138,6 +138,7 @@ namespace BL
         //-----------------------Order--------------------------------
         public void addOrder(Order order)
         {
+            //Checks if the hosting unit is available on the requested date
             HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
             GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
 
@@ -155,9 +156,11 @@ namespace BL
         }
         public void updateOrder(Order order, Order orderUpdate)
         {
+            //can't change a closed order status
             if (order.status != orderUpdate.status && order.status == StatusOrder.ClosedForCustomerResponse)
                 throw new BLexception.CloseOrderException();
 
+            //Checks if the hosting unit is available on the requested date
             HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
             GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
 
@@ -302,6 +305,9 @@ namespace BL
             var varGuestRequest = from guestRequest in GetGuestRequests()
                                   where guestRequest.key == key
                                   select guestRequest;
+
+            if (varGuestRequest == null)
+                throw new BLexception.GuestRequestDoesntExistException();
 
             return (GuestRequest)varGuestRequest;
         }

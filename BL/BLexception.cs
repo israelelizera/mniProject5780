@@ -60,8 +60,10 @@ namespace BL
         {
             public HostingUnitDoesntExistException() { }
         }
-
-
+        public class GuestRequestDoesntExistException : Exception
+        {
+            public GuestRequestDoesntExistException() { }
+        }
 
         public static bool IsValidEmail(string email)
         {
