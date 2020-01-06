@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BE", "BE\BE.csproj", "{608B8AFA-90A6-48D9-88F2-49AE513E0993}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{33F797B7-1969-40E8-835B-B2FAEB44A2BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS", "DS\DS.csproj", "{A93331ED-9852-4F2B-B6F6-4A0D2E4E3DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,22 @@ Global
 		{A93331ED-9852-4F2B-B6F6-4A0D2E4E3DE0}.Release|x64.Build.0 = Release|Any CPU
 		{A93331ED-9852-4F2B-B6F6-4A0D2E4E3DE0}.Release|x86.ActiveCfg = Release|Any CPU
 		{A93331ED-9852-4F2B-B6F6-4A0D2E4E3DE0}.Release|x86.Build.0 = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|ARM.Build.0 = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|x64.Build.0 = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Debug|x86.Build.0 = Debug|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|ARM.ActiveCfg = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|ARM.Build.0 = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|x64.ActiveCfg = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|x64.Build.0 = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|x86.ActiveCfg = Release|Any CPU
+		{80668BB4-ABB3-4C22-BDD2-C44CA6F6EB57}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

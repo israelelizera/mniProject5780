@@ -1,0 +1,11 @@
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.exe
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.deps.json
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.runtimeconfig.json
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.runtimeconfig.dev.json
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.dll
+C:\Users\elize\source\repos\mniProject5780\PL\bin\Debug\netcoreapp3.0\PL.pdb
+C:\Users\elize\source\repos\mniProject5780\PL\obj\Debug\netcoreapp3.0\PL.csprojAssemblyReference.cache
+C:\Users\elize\source\repos\mniProject5780\PL\obj\Debug\netcoreapp3.0\PL.AssemblyInfoInputs.cache
+C:\Users\elize\source\repos\mniProject5780\PL\obj\Debug\netcoreapp3.0\PL.AssemblyInfo.cs
+C:\Users\elize\source\repos\mniProject5780\PL\obj\Debug\netcoreapp3.0\PL.dll
+C:\Users\elize\source\repos\mniProject5780\PL\obj\Debug\netcoreapp3.0\PL.pdb

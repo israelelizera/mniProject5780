@@ -45,3 +45,6 @@ C:\Users\elize\Source\Repos\mniProject5780\BE\obj\Debug\netstandard2.0\BE.Assemb
 C:\Users\elize\Source\Repos\mniProject5780\BE\obj\Debug\netstandard2.0\BE.AssemblyInfo.cs
 C:\Users\elize\Source\Repos\mniProject5780\BE\obj\Debug\netstandard2.0\BE.dll
 C:\Users\elize\Source\Repos\mniProject5780\BE\obj\Debug\netstandard2.0\BE.pdb
+C:\Users\elize\source\repos\mniProject5780\BE\bin\Debug\netstandard2.0\BE.deps.json
+C:\Users\elize\source\repos\mniProject5780\BE\bin\Debug\netstandard2.0\BE.dll
+C:\Users\elize\source\repos\mniProject5780\BE\bin\Debug\netstandard2.0\BE.pdb

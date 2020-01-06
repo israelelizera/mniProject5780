@@ -8,8 +8,9 @@ namespace DAL
     {
         //GuestRequest
         void addGuestRequest(GuestRequest guestRequest);
-        void updateGuestRequest(GuestRequest guestRequest, GuestRequest guestRequestUpdate);
-        void deleteGuestRequest(GuestRequest guestRequest);
+        void updateGuestRequest(GuestRequest guestRequestKey, GuestRequest guestRequestStatus);
+        void deleteGuestRequest(GuestRequest guestRequestKey);
+
 
         //HostingUnit
         void addHostingUnit(HostingUnit hostingUnit);

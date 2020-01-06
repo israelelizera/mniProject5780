@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BE;
-using DAL.Exeptions;
 using DS;
 
 namespace DAL
@@ -35,6 +34,11 @@ namespace DAL
             DataSource.guestRequests.Add(Cloning.Clon(match.ToList()[0]));
 
         }
+        public void updateGuestRequest(GuestRequest guestRequestKey, GuestRequest guestRequestStatus)
+        {
+            updateGuestRequest(guestRequestKey.GuestRequestKey, guestRequestStatus.status);
+        }
+
         public void deleteGuestRequest(int guestRequestKey)//if theres more than one matching its will remove all 
         {
             var match = from guest in DS.DataSource.guestRequests
@@ -44,6 +48,11 @@ namespace DAL
                 throw new dalExeptionItemDoesntexist();
             DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
         }
+        public void deleteGuestRequest(GuestRequest guestRequestKey)
+        {
+            deleteGuestRequest(guestRequestKey.GuestRequestKey);
+        }
+
 
         //HostingUnit
         public void addHostingUnit(HostingUnit hostingUnit)
@@ -72,8 +81,12 @@ namespace DAL
             match.ToList().RemoveAll(hostU  => hostingUnitKey == hostU.HostingUnitKey);
             match.ToList()[0].Diary = diary;
             DataSource.hostingUnits.Add(Cloning.Clon(match.ToList()[0]));
-
         }
+        public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
+        {
+            updateHostingUnit(hostingUnit.HostingUnitKey, hostingUnitUpdate.Diary);
+        }
+
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
             var match = from hostU in DS.DataSource.hostingUnits
@@ -112,6 +125,10 @@ namespace DAL
             match.ToList()[0].status = status;
             DataSource.orders.Add(match.ToList()[0]);
         }
+       public void updateOrder(Order order, Order orderUpdate)
+        {
+            updateOrder(order.HostingUnitKey, orderUpdate.status);
+        }
 
         //get List
         public List<Order> GetOrders()
@@ -128,10 +145,6 @@ namespace DAL
             return DS.DataSource.hostingUnits;
 
         }
-        /// <summary>
-        /// ggg
-        /// </summary>
-        /// <returns></returns>
 
         public List<Host> GetHosts()
         {
