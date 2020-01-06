@@ -15,6 +15,7 @@ namespace BL
         {
             public InvalidPrivateNameException() { }
         }
+
         public class InvalidFamilyNameException : Exception
         {
             public InvalidFamilyNameException() { }
@@ -24,14 +25,17 @@ namespace BL
         {
             public InvalidMailAddressEception() { }
         }
+
         public class InvalidNumberVacationersException : Exception
         {
             public InvalidNumberVacationersException() { }
         }
+
         public class InvalidHostingUnitNameException : Exception
         {
             public InvalidHostingUnitNameException() { }
         }
+
         public class DiaryIsNullException : Exception
         {
             public DiaryIsNullException() { }
@@ -41,6 +45,7 @@ namespace BL
         {
             public DayCantBeUnderZeroException() { }
         }
+
         public class OpenOrderException : Exception
         {
             public OpenOrderException() { }

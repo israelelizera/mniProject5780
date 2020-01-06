@@ -10,11 +10,10 @@ namespace BE
         static int HostingUnitKeyTemp = 10000000;
         static double Commission = 0.5;
         static int DaysToEnd;
-        internal static int getGuestRequestKeyTemp() {return GuestRequestKeyTemp; }
-        internal static int getGuestRequestKeyTempPlusOne() { ++GuestRequestKeyTemp;return GuestRequestKeyTemp; }
 
+        internal static int getGuestRequestKeyTemp() { return GuestRequestKeyTemp; }
+        internal static int getGuestRequestKeyTempPlusOne() { ++GuestRequestKeyTemp; return GuestRequestKeyTemp; }
         internal static int getHostingUnitKeyTemp() { return HostingUnitKeyTemp; }
-        internal static int getHostingUnitKeyTempPlusOne() { ++HostingUnitKeyTemp; return HostingUnitKeyTemp ; }
-
+        internal static int getHostingUnitKeyTempPlusOne() { ++HostingUnitKeyTemp; return HostingUnitKeyTemp; }
     }
 }

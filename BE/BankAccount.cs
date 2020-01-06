@@ -19,7 +19,7 @@ namespace BE
         public override string ToString() { return null; }
 
         BankAccount(int bankNumber, string bankName, int branchNumber,
-            string branchAddress,string branchCity,int bankAccountNumber)
+            string branchAddress, string branchCity, int bankAccountNumber)
         {
             BankNumber = bankNumber;
             BankName = bankName;

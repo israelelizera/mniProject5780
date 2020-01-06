@@ -17,17 +17,8 @@ namespace BE
         public BankAccount BankAccount;
         public bool CollectionClearance;//Certificate of collection from the bank account
         public List<HostingUnit> hostingUnits;
+
         public override string ToString() { return null; }
-        /*Host(int hostKey, string privateName, string familyName, int fhoneNumber, string mailAddress, BankAccount bankAccount, bool collectionClearance)
-        {
-            HostKey = hostKey;
-            PrivateName = privateName;
-            FamilyName = familyName;
-            FhoneNumber = fhoneNumber;
-            MailAddress = mailAddress;
-            BankAccount = bankAccount;
-            CollectionClearance = collectionClearance;
-        }*/
         public int getHostKey() { return HostKey; }
     }
 }

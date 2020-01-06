@@ -15,13 +15,15 @@ namespace BE
         public string FamilyName;
         public string MailAddress;
 
-        public StatusOrder status; 
+        public StatusOrder status;
+
         public DateTime RegistrationDate;
         public DateTime EntryDate;
         public DateTime ReleaseDate;
 
         public Location location;
         public Location SubLocation;
+
         public KindOfUnit Type;
 
         public int Adults;

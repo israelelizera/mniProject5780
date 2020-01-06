@@ -106,7 +106,7 @@ namespace BL
         /// </summary>
         /// <param name="hostingUnit"></param>
         /// <returns></returns>
-        IEnumerable<IGrouping<int, Host>> HostByhostingUnitNum();
+        IEnumerable<IGrouping<int, Host>> HostByHostingUnitNum();
 
         /// <summary>
         /// List of hosting units grouped by the resort location

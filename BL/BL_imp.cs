@@ -272,9 +272,9 @@ namespace BL
                                                                       group guestRequest by (guestRequest.Adults + guestRequest.Children);
             return guestRequests;
         }
-        public IEnumerable<IGrouping<int, Host>> HostByhostingUnitNum()
+        public IEnumerable<IGrouping<int, Host>> HostByHostingUnitNum()
         {
-            IEnumerable<IGrouping<int, Host>> hosts = from host in dal.GetHosts()
+            IEnumerable<IGrouping<int, Host>> hosts = from host in GetHosts()
                                                       group host by host.hostingUnits.Count;
 
             return hosts;

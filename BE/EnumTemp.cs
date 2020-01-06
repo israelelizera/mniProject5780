@@ -1,6 +1,6 @@
 ﻿namespace BE
 {
-    /* the prupose of this code file is to combine all of the enum */
+    /* the prupose of this code file is to combine all of the enums */
 
     /// <summary>
     /// necessary, possible, notInterested
