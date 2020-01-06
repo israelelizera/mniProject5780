@@ -11,13 +11,13 @@ namespace BL
             public InvalidDatesException() { }
         }
 
-        public class PrivateNameMissingException : Exception
+        public class InvalidPrivateNameException : Exception
         {
-            public PrivateNameMissingException() { }
+            public InvalidPrivateNameException() { }
         }
-        public class FamilyNameMissingException : Exception
+        public class InvalidFamilyNameException : Exception
         {
-            public FamilyNameMissingException() { }
+            public InvalidFamilyNameException() { }
         }
 
         public class InvalidMailAddressEception : Exception

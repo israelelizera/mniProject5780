@@ -19,10 +19,10 @@ namespace BL
                 throw new BLexception.InvalidDatesException();
 
             if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
-                throw new BLexception.PrivateNameMissingException();
+                throw new BLexception.InvalidPrivateNameException();
 
             if (guestRequest.FamilyName == "" || guestRequest.FamilyName == null)
-                throw new BLexception.FamilyNameMissingException();
+                throw new BLexception.InvalidFamilyNameException();
 
             if (guestRequest.MailAddress == "" || guestRequest.MailAddress == null || !BLexception.IsValidEmail(guestRequest.MailAddress))
                 throw new BLexception.InvalidMailAddressEception();
@@ -46,10 +46,10 @@ namespace BL
                 throw new BLexception.InvalidDatesException();
 
             if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
-                throw new BLexception.PrivateNameMissingException();
+                throw new BLexception.InvalidPrivateNameException();
 
             if (guestRequest.FamilyName == "" || guestRequest.FamilyName == null)
-                throw new BLexception.FamilyNameMissingException();
+                throw new BLexception.InvalidFamilyNameException();
 
             if (guestRequest.MailAddress == "" || guestRequest.MailAddress == null || !BLexception.IsValidEmail(guestRequest.MailAddress))
                 throw new BLexception.InvalidMailAddressEception();
