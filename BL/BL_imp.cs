@@ -137,6 +137,7 @@ namespace BL
         //-----------------------Order--------------------------------
         public void addOrder(Order order)
         {
+
             try
             {
                 dal.addOrder(order);
@@ -273,8 +274,14 @@ namespace BL
 
         //-----------funk----------
         
-        public HostingUnit GetHostingUnitByKey()
-        
+        public HostingUnit GetHostingUnitByKey(int key)
+        {
+            var varHostingUnit = from hostingUnit in getHostingUnits()
+                                 where hostingUnit.HostingUnitKey == key
+                                 select hostingUnit;
+
+            return (HostingUnit)varHostingUnit;
+        }        
     }
 }
 
