@@ -117,7 +117,7 @@ namespace BL
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
             var hostingUnitOreder = from order in GetOrders()
-                                    where (order.HostingUnitKey == hostingUnit.HostingUnitKey) &&
+                                    where (order.HostingUnitKey == hostingUnit.key) &&
                                             (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
                                     select order;
 
@@ -137,7 +137,8 @@ namespace BL
         //-----------------------Order--------------------------------
         public void addOrder(Order order)
         {
-
+            HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
+            GuestRequest guestRequest =
             try
             {
                 dal.addOrder(order);
@@ -239,7 +240,7 @@ namespace BL
         public int OrdersSentOrClosed(HostingUnit hostingUnit)
         {
             var list = from order in GetOrders()
-                       where order.HostingUnitKey == hostingUnit.HostingUnitKey
+                       where order.HostingUnitKey == hostingUnit.key
                        select order;
 
             return list.ToList().Count;
@@ -277,10 +278,19 @@ namespace BL
         public HostingUnit GetHostingUnitByKey(int key)
         {
             var varHostingUnit = from hostingUnit in getHostingUnits()
-                                 where hostingUnit.HostingUnitKey == key
+                                 where hostingUnit.key == key
                                  select hostingUnit;
 
             return (HostingUnit)varHostingUnit;
+        }
+
+        public GuestRequest GetGuestRequestByKey(int key)
+        {
+            var varHostingUnit = from hostingUnit in getHostingUnits()
+                                 where hostingUnit.key == key
+                                 select hostingUnit;
+
+            return (GuestRequest)varHostingUnit;
         }        
     }
 }

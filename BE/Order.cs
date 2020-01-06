@@ -9,14 +9,13 @@ namespace BE
     /// </summary>
     public class Order
     {
-       public  int HostingUnitKey;
-       public  int GuestRequestKey;
-       public  int OrderKey;
-       public  StatusOrder status;/// <summary>
-                /// status of the order-Not addressed, sent email, closed for customer unresponsiveness, closed for customer response
-                /// </summary>
-       public  DateTime CreateDate;
-       public  DateTime OrderDate;
+       public int HostingUnitKey;
+       public int GuestRequestKey;
+       public int OrderKey;
+       public StatusOrder status;
+       public DateTime CreateDate;
+       public DateTime OrderDate;
+
         public override string ToString() { return null; } 
         public virtual bool Equals(Order order)
         {
