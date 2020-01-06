@@ -128,10 +128,14 @@ namespace DAL
             return DS.DataSource.hostingUnits;
 
         }
+        /// <summary>
+        /// ggg
+        /// </summary>
+        /// <returns></returns>
 
         public List<Host> GetHosts()
         {
-            return ((List<Host>)(Cloning.Clon(DataSource.hosts)));
+            return DataSource.hosts;
         }
 
 
