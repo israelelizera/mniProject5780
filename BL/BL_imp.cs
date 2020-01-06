@@ -140,8 +140,8 @@ namespace BL
             HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
             GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
 
-            if (!hostingUnit.AvailableOnDate(guestRequest))            
-                throw new BLexception.UnvailableHostingUnitException();            
+            if (!hostingUnit.AvailableOnDate(guestRequest))
+                throw new BLexception.UnvailableHostingUnitException();
 
             try
             {
@@ -154,19 +154,18 @@ namespace BL
         }
         public void updateOrder(Order order, Order orderUpdate)
         {
-            if (order.status == StatusOrder.ClosedForCustomerResponse)
+            if (order.status != orderUpdate.status && order.status == StatusOrder.ClosedForCustomerResponse)
                 throw new BLexception.CloseOrderException();
 
             HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
             GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
 
-            if (!hostingUnit.AvailableOnDate(guestRequest))           
+            if (!hostingUnit.AvailableOnDate(guestRequest))
                 throw new BLexception.UnvailableHostingUnitException();
-            
+
             try
             {
                 dal.updateOrder(order, orderUpdate);
-
             }
             catch (Exception e)
             {
