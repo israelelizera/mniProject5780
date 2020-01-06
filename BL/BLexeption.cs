@@ -51,6 +51,11 @@ namespace BL
             public CloseOrderException() { }
         }
 
+        public class UnvailableHostingUnitException : Exception
+        {
+            public UnvailableHostingUnitException() { }
+        }
+
         public static bool IsValidEmail(string email)
         {
             try

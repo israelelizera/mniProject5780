@@ -138,7 +138,11 @@ namespace BL
         public void addOrder(Order order)
         {
             HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
-            GuestRequest guestRequest =
+            GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
+
+            if (!hostingUnit.AvailableOnDate(guestRequest))            
+                throw new BLexception.UnvailableHostingUnitException();            
+
             try
             {
                 dal.addOrder(order);
@@ -153,6 +157,12 @@ namespace BL
             if (order.status == StatusOrder.ClosedForCustomerResponse)
                 throw new BLexception.CloseOrderException();
 
+            HostingUnit hostingUnit = GetHostingUnitByKey(order.HostingUnitKey);
+            GuestRequest guestRequest = GetGuestRequestByKey(order.GuestRequestKey);
+
+            if (!hostingUnit.AvailableOnDate(guestRequest))           
+                throw new BLexception.UnvailableHostingUnitException();
+            
             try
             {
                 dal.updateOrder(order, orderUpdate);
@@ -172,7 +182,7 @@ namespace BL
         public List<GuestRequest> GetGuestRequests()
         {
             return dal.GetGuestRequests();
-        }       
+        }
         public List<Order> GetOrders()
         {
             return dal.GetOrders();
@@ -231,7 +241,7 @@ namespace BL
         public int numOfOrders(GuestRequest guestRequest)
         {
             var list = from order in GetOrders()
-                       where order.GuestRequestKey == guestRequest.GuestRequestKey
+                       where order.GuestRequestKey == guestRequest.key
                        select order;
 
             return list.ToList().Count;
@@ -271,10 +281,10 @@ namespace BL
             IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in getHostingUnits()
                                                                          group hostingUnit by hostingUnit.location;
             return hostingUnits;
-        }            
+        }
 
         //-----------funk----------
-        
+
         public HostingUnit GetHostingUnitByKey(int key)
         {
             var varHostingUnit = from hostingUnit in getHostingUnits()
@@ -286,12 +296,12 @@ namespace BL
 
         public GuestRequest GetGuestRequestByKey(int key)
         {
-            var varHostingUnit = from hostingUnit in getHostingUnits()
-                                 where hostingUnit.key == key
-                                 select hostingUnit;
+            var varGuestRequest = from guestRequest in GetGuestRequests()
+                                  where guestRequest.key == key
+                                  select guestRequest;
 
-            return (GuestRequest)varHostingUnit;
-        }        
+            return (GuestRequest)varGuestRequest;
+        }
     }
 }
 

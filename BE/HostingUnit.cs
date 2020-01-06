@@ -33,6 +33,19 @@ namespace BE
             return true;
         }
 
+        public bool AvailableOnDate(GuestRequest guestRequest)
+        {
+            DateTime EntryDate = guestRequest.EntryDate;
+            int days = (guestRequest.ReleaseDate - EntryDate).Days;
+
+            int startIndexInDiary = EntryDate.Day - 1 + (EntryDate.Month - 1) * 31;
+            int endIndexInDiary = startIndexInDiary + days;
+
+            for (int i = startIndexInDiary; i < endIndexInDiary; i++)
+                if (Diary[i / 12, i % 31]) return false;
+            return true;
+        }
+
         public virtual bool Equals(HostingUnit hostingUnit)
         {
             return (key == hostingUnit.key &&
