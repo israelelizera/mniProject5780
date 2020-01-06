@@ -291,6 +291,9 @@ namespace BL
                                  where hostingUnit.key == key
                                  select hostingUnit;
 
+            if (varHostingUnit == null)
+                throw new BLexception.HostingUnitDoesntExistException();
+
             return (HostingUnit)varHostingUnit;
         }
 

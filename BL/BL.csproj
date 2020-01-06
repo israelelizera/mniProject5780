@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="BLexception.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj" />
     <ProjectReference Include="..\DAL\DAL.csproj" />
   </ItemGroup>
