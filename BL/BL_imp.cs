@@ -270,6 +270,11 @@ namespace BL
                                                                          group hostingUnit by hostingUnit.location;
             return hostingUnits;
         }            
+
+        //-----------funk----------
+        
+        public HostingUnit GetHostingUnitByKey()
+        
     }
 }
 
