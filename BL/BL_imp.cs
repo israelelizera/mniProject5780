@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using BE;
 using DAL;
 
@@ -83,7 +82,7 @@ namespace BL
         {
             //Logical Enforcement
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
-                throw new BLexception.HostingUnitNameMissingException();
+                throw new BLexception.InvalidHostingUnitNameException();
 
             if (hostingUnit.Diary == null)
                 throw new BLexception.DiaryIsNullException();
@@ -101,7 +100,8 @@ namespace BL
         {
             //Logical Enforcement
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
-                throw new BLexception.HostingUnitNameMissingException();
+                throw new BLexception.InvalidHostingUnitNameException();
+
             if (hostingUnit.Diary == null)
                 throw new BLexception.DiaryIsNullException();
 
@@ -198,8 +198,8 @@ namespace BL
         /*-------------------------------------------------*/
         public List<HostingUnit> freeHostingUnits(DateTime dateTime, int day)
         {
-            if (day <= 0)
-                throw new BLexception.CantUndeZeroException();
+            if (day < 0)
+                throw new BLexception.DayCantBeUnderZeroException();
 
             var list = from unit in getHostingUnits()
                        where unit.AvailableOnDate(dateTime, day)
@@ -232,7 +232,7 @@ namespace BL
             return list.ToList();
         }
 
-        public List<GuestRequest> guestRequestByFunc(Func<GuestRequest, bool> func)
+        public List<GuestRequest> GetGuestRequestByFunc(Func<GuestRequest, bool> func)
         {
             var list = from guestRequest in GetGuestRequests()
                        where func(guestRequest)

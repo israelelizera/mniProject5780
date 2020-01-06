@@ -28,18 +28,18 @@ namespace BL
         {
             public InvalidNumberVacationersException() { }
         }
-        public class HostingUnitNameMissingException : Exception
+        public class InvalidHostingUnitNameException : Exception
         {
-            public HostingUnitNameMissingException() { }
+            public InvalidHostingUnitNameException() { }
         }
         public class DiaryIsNullException : Exception
         {
             public DiaryIsNullException() { }
         }
 
-        public class CantUndeZeroException : Exception
+        public class DayCantBeUnderZeroException : Exception
         {
-            public CantUndeZeroException() { }
+            public DayCantBeUnderZeroException() { }
         }
         public class OpenOrderException : Exception
         {

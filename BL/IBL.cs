@@ -68,7 +68,7 @@ namespace BL
         /// </summary>
         /// <param name="func"></param>
         /// <returns></returns>
-        List<GuestRequest> guestRequestByFunc(Func<GuestRequest, bool> func);
+        List<GuestRequest> GetGuestRequestByFunc(Func<GuestRequest, bool> func);
 
         /// <summary>
         /// A function that accepts customer demand and returns the number of orders sent to it
