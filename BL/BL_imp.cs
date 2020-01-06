@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using BE;
 using DAL;
+
 namespace BL
 {
     class BL_imp : IBL
@@ -13,7 +14,8 @@ namespace BL
         //------------------------GuestRequest------------------------------
         public void addGuestRequest(GuestRequest guestRequest)
         {
-            if (guestRequest.ReleaseDate <= guestRequest.EntryDate)
+            //Logical Enforcement
+            if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.ReleaseDate < DateTime.Now)
                 throw new BLexception.InvalidDatesException();
 
             if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
@@ -23,43 +25,141 @@ namespace BL
                 throw new BLexception.FamilyNameMissingException();
 
             if (guestRequest.MailAddress == "" || guestRequest.MailAddress == null || !BLexception.IsValidEmail(guestRequest.MailAddress))
-                throw new BLexception.MailAddressMissingException();
+                throw new BLexception.InvalidMailAddressEception();
 
+            if (guestRequest.Adults < 0 || guestRequest.Children < 0 || guestRequest.Adults + guestRequest.Children == 0)
+                throw new BLexception.InvalidNumberVacationersException();
 
-
-            dal.addGuestRequest(guestRequest);
+            try
+            {
+                dal.addGuestRequest(guestRequest);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void updateGuestRequest(GuestRequest guestRequest, GuestRequest guestRequestUpdate)
         {
-            dal.updateGuestRequest(guestRequest, guestRequestUpdate);
+            //Logical Enforcement
+            if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.ReleaseDate < DateTime.Now)
+                throw new BLexception.InvalidDatesException();
+
+            if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
+                throw new BLexception.PrivateNameMissingException();
+
+            if (guestRequest.FamilyName == "" || guestRequest.FamilyName == null)
+                throw new BLexception.FamilyNameMissingException();
+
+            if (guestRequest.MailAddress == "" || guestRequest.MailAddress == null || !BLexception.IsValidEmail(guestRequest.MailAddress))
+                throw new BLexception.InvalidMailAddressEception();
+
+            if (guestRequest.Adults < 0 || guestRequest.Children < 0 || guestRequest.Adults + guestRequest.Children == 0)
+                throw new BLexception.InvalidNumberVacationersException();
+
+            try
+            {
+                dal.updateGuestRequest(guestRequest, guestRequestUpdate);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void deleteGuestRequest(GuestRequest guestRequest)
         {
-            dal.deleteGuestRequest(guestRequest);
+            try
+            {
+                dal.deleteGuestRequest(guestRequest);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         //-----------------------HostingUnit--------------------------------
         public void addHostingUnit(HostingUnit hostingUnit)
         {
-            dal.addHostingUnit(hostingUnit);
+            //Logical Enforcement
+            if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
+                throw new BLexception.HostingUnitNameMissingException();
+
+            if (hostingUnit.Diary == null)
+                throw new BLexception.DiaryIsNullException();
+
+            try
+            {
+                dal.addHostingUnit(hostingUnit);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
         {
-            dal.updateHostingUnit(hostingUnit, hostingUnitUpdate);
+            //Logical Enforcement
+            if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
+                throw new BLexception.HostingUnitNameMissingException();
+            if (hostingUnit.Diary == null)
+                throw new BLexception.DiaryIsNullException();
+
+            try
+            {
+                dal.updateHostingUnit(hostingUnit, hostingUnitUpdate);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
-            dal.deleteHostingUnit(hostingUnit);
+            var hostingUnitOreder = from order in GetOrders()
+                                    where (order.HostingUnitKey == hostingUnit.HostingUnitKey) &&
+                                            (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
+                                    select order;
+
+            if (hostingUnitOreder != null)
+                throw new BLexception.OpenOrderException();
+
+            try
+            {
+                dal.deleteHostingUnit(hostingUnit);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         //-----------------------Order--------------------------------
         public void addOrder(Order order)
         {
-            dal.addOrder(order);
+            try
+            {
+                dal.addOrder(order);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
         public void updateOrder(Order order, Order orderUpdate)
         {
-            dal.updateOrder(order, orderUpdate);
+            if (order.status == StatusOrder.ClosedForCustomerResponse)
+                throw new BLexception.CloseOrderException();
+
+            try
+            {
+                dal.updateOrder(order, orderUpdate);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         //-----------------------gets--------------------------------
@@ -89,6 +189,7 @@ namespace BL
             return (date2 - date1).Days;
 
         }
+
         public int daysBetween(DateTime date)
         {
             if (DateTime.Now > date)
@@ -98,6 +199,9 @@ namespace BL
 
         public List<HostingUnit> freeHostingUnits(DateTime dateTime, int day)
         {
+            if (day <= 0)
+                throw new BLexception.CantUndeZeroException();
+
             var list = from unit in getHostingUnits()
                        where unit.AvailableOnDate(dateTime, day)
                        select unit;
@@ -105,36 +209,63 @@ namespace BL
             return list.ToList();
         }
 
+        public List<GuestRequest> guestRequests(Func<GuestRequest, bool> func)
+        {
+            var list = from guestRequest in GetGuestRequests()
+                       where func(guestRequest)
+                       select guestRequest;
+
+            return list.ToList();
+        }
+
+        public int numOfOrders(GuestRequest guestRequest)
+        {
+            var list = from order in GetOrders()
+                       where order.GuestRequestKey == guestRequest.GuestRequestKey
+                       select order;
+
+            return list.ToList().Count;
+        }
+
+        public int OrdersSentOrClosed(HostingUnit hostingUnit)
+        {
+            var list = from order in GetOrders()
+                       where order.HostingUnitKey == hostingUnit.HostingUnitKey
+                       select order;
+
+            return list.ToList().Count;
+        }
+
+        public List<Order> timePast(int day)
+        {
+            var list = from order in GetOrders()
+                       where (DateTime.Now - order.OrderDate).Days > day
+                       select order;
+
+            return list.ToList();
+        }
+
+        /*----------------------Grouping-----------------*/
         public IEnumerable<IGrouping<Location, GuestRequest>> GuestRequestByLocation()
         {
-            IEnumerable<IGrouping<Location, GuestRequest>> guestRequests = from guestRequest in dal.GetGuestRequests()
+            IEnumerable<IGrouping<Location, GuestRequest>> guestRequests = from guestRequest in GetGuestRequests()
                                                                            group guestRequest by guestRequest.location;
             return guestRequests;
         }
 
         public IEnumerable<IGrouping<Location, HostingUnit>> HostingUnitByLocation()
         {
-            IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in dal.getHostingUnits()
+            IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in getHostingUnits()
                                                                          group hostingUnit by hostingUnit.location;
             return hostingUnits;
         }
 
         public IEnumerable<IGrouping<int, GuestRequest>> GuestRequestByVacationers()
         {
-            IEnumerable<IGrouping<int, GuestRequest>> guestRequests = from guestRequest in dal.GetGuestRequests()
+            IEnumerable<IGrouping<int, GuestRequest>> guestRequests = from guestRequest in GetGuestRequests()
                                                                       group guestRequest by (guestRequest.Adults + guestRequest.Children);
             return guestRequests;
         }
-
-        public List<GuestRequest> guestRequests(Func<GuestRequest, bool> func)
-        {
-            var list = from guestRequest in dal.GetGuestRequests()
-                       where func
-                       select guestRequest;
-
-            return (List<GuestRequest>)list;
-        }
-
         public IEnumerable<IGrouping<int, Host>> HostByhostingUnitNum()
         {
             IEnumerable<IGrouping<int, Host>> hosts = from host in dal.GetHosts()
@@ -142,21 +273,6 @@ namespace BL
 
             return hosts;
         }
-
-        public int numOfOrders(GuestRequest guestRequest)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int OrdersSentOrClosed(GuestRequest guestRequest)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Order> timePast(int day)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
+

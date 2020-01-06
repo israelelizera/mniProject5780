@@ -32,7 +32,7 @@ namespace DAL
                 throw new dalExeptionMoreThanOneAnswer();
             match.ToList().RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
             match.ToList()[0].status = guestRequestStatus;
-            DataSource.guestRequests.Add(match.ToList()[0]);
+            DataSource.guestRequests.Add(Cloning.Clon(match.ToList()[0]));
 
         }
         public void deleteGuestRequest(int guestRequestKey)//if theres more than one matching its will remove all 
@@ -56,7 +56,7 @@ namespace DAL
                 throw new dalExeptionIdAlreadyexist();
             else
             {
-                DS.DataSource.hostingUnits.Add(hostingUnit);
+                DS.DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
             }
 
         }
@@ -71,7 +71,7 @@ namespace DAL
                 throw new dalExeptionMoreThanOneAnswer();
             match.ToList().RemoveAll(hostU  => hostingUnitKey == hostU.HostingUnitKey);
             match.ToList()[0].Diary = diary;
-            DataSource.hostingUnits.Add(match.ToList()[0]);
+            DataSource.hostingUnits.Add(Cloning.Clon(match.ToList()[0]));
 
         }
         public void deleteHostingUnit(HostingUnit hostingUnit)
@@ -131,7 +131,7 @@ namespace DAL
 
         public List<Host> GetHosts()
         {
-            return DS.DataSource.hosts;
+            return ((List<Host>)(Cloning.Clon(DataSource.hosts)));
         }
 
 

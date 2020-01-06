@@ -20,9 +20,35 @@ namespace BL
             public FamilyNameMissingException() { }
         }
 
-        public class MailAddressMissingException : Exception
+        public class InvalidMailAddressEception : Exception
         {
-            public MailAddressMissingException() { }
+            public InvalidMailAddressEception() { }
+        }
+        public class InvalidNumberVacationersException : Exception
+        {
+            public InvalidNumberVacationersException() { }
+        }
+        public class HostingUnitNameMissingException : Exception
+        {
+            public HostingUnitNameMissingException() { }
+        }
+        public class DiaryIsNullException : Exception
+        {
+            public DiaryIsNullException() { }
+        }
+
+        public class CantUndeZeroException : Exception
+        {
+            public CantUndeZeroException() { }
+        }
+        public class OpenOrderException : Exception
+        {
+            public OpenOrderException() { }
+        }
+
+        public class CloseOrderException : Exception
+        {
+            public CloseOrderException() { }
         }
 
         public static bool IsValidEmail(string email)

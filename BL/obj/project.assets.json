@@ -238,11 +238,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BL\\BL.csproj",
+      "projectUniqueName": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BL\\BL.csproj",
       "projectName": "BL",
-      "projectPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BL\\BL.csproj",
+      "projectPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BL\\BL.csproj",
       "packagesPath": "C:\\Users\\elize\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BL\\obj\\",
+      "outputPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elize\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -258,11 +258,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj": {
-              "projectPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj"
+            "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj": {
+              "projectPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj"
             },
-            "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\DAL\\DAL.csproj"
+            "C:\\Users\\elize\\source\\repos\\mniProject5780\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\DAL\\DAL.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj": {}
+    "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj": {
+    "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj",
+        "projectUniqueName": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj",
         "projectName": "BE",
-        "projectPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\BE.csproj",
+        "projectPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\BE.csproj",
         "packagesPath": "C:\\Users\\elize\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elize\\Source\\Repos\\mniProject5780\\BE\\obj\\",
+        "outputPath": "C:\\Users\\elize\\source\\repos\\mniProject5780\\BE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\elize\\AppData\\Roaming\\NuGet\\NuGet.Config",
