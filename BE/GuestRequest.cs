@@ -10,60 +10,38 @@ namespace BE
     /// </summary>
     public class GuestRequest
     {
-        public int guestRequestkey = Configuration.getGuestRequestKeyTempPlusOne();
+        public int GuestRequestKey = Configuration.getGuestRequestKeyTempPlusOne();
         public string PrivateName;
         public string FamilyName;
         public string MailAddress;
 
-        public int Adults;//number of adults
-        public int Children;//"      " children
+        public StatusOrder status; /*NotAddressed,SentEmail,ClosedForCustomerUnresponsiveness,ClosedForCustomerResponse*/
 
-        public StatusOrder status;//status bakasht iroah
-
-        public DateTime RegistrationDate;//תאריך הרשמה למערכת
-        public DateTime EntryDate;//
+        public DateTime RegistrationDate;
+        public DateTime EntryDate;
         public DateTime ReleaseDate;
 
-        public Location location;
-        public KindOfUnit Type;
+        public Location location;/*All, North, South, Center, Jerusalem*/
+        public Location SubLocation;
+        public KindOfUnit Type;/* GuesRoom, Apartment, HotelRoom, Tent*/
 
-        
+        public int Adults { get; set; }
+        public int Children { get; set; }
 
-        public Request Pool;
+        public Request Pool;/*All,North,South,Center,Jerusalem*/
         public Request Jacuzzi;
         public Request Garden;
         public Request ChildrensAttractions;
-
-        //constructor without initalize GRK(guestRequestKey)
-        public GuestRequest(string privateName, string familyName, string mailAddress, int adults,//
-            int children, StatusOrder status, DateTime registrationDate, DateTime entryDate,
-            DateTime releaseDate, Location location, KindOfUnit type, Request pool, Request jacuzzi,
-            Request garden, Request childrensAttractions)
+        public override string ToString()
         {
-            PrivateName = privateName;
-            FamilyName = familyName;
-            MailAddress = mailAddress;
-            Adults = adults;
-            Children = children;
-            this.status = status;
-            RegistrationDate = registrationDate;
-            EntryDate = entryDate;
-            ReleaseDate = releaseDate;
-            this.location = location;
-            Type = type;
-            Pool = pool;
-            Jacuzzi = jacuzzi;
-            Garden = garden;
-            ChildrensAttractions = childrensAttractions;
+            return("G");
         }
-
-        public override string ToString() { return null; }
 
         public virtual bool Equals(GuestRequest guestRequest)
         {
             return
             (
-                guestRequestkey == guestRequest.guestRequestkey &&
+                GuestRequestKey == guestRequest.GuestRequestKey &&
                 PrivateName == guestRequest.PrivateName &&
                 FamilyName == guestRequest.FamilyName &&
                 MailAddress == guestRequest.MailAddress &&
@@ -73,7 +51,8 @@ namespace BE
                 EntryDate == guestRequest.EntryDate &&
                 ReleaseDate == guestRequest.ReleaseDate &&
 
-                location == guestRequest.location &&                
+                location == guestRequest.location &&
+                SubLocation == guestRequest.SubLocation &&
                 Type == guestRequest.Type &&
 
                 Adults == guestRequest.Adults &&
@@ -85,5 +64,7 @@ namespace BE
                 ChildrensAttractions == guestRequest.ChildrensAttractions
             );
         }
+
+
     }
 }

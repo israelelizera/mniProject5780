@@ -12,45 +12,53 @@ namespace DAL
         //GuestRequest
         public void addGuestRequest(GuestRequest guestRequest)
         {
-            var match = from guest in DS.DataSource.guestRequests
-                        where guestRequest.guestRequestkey == guest.guestRequestkey
-                        select guest;
-            if (match.Count() > 0)
-                throw new dalExeptionIdAlreadyexist();
+            if (DS.DataSource.guestRequests != null)
+            {
+                var match = from guest in DS.DataSource.guestRequests
+                            where guestRequest.GuestRequestKey == guest.GuestRequestKey
+                            select guest;
+                if (match.Count() > 0)
+                    throw new dalExeptionIdAlreadyexist();
+                else
+                    DataSource.guestRequests.Add(Cloning.Clon(guestRequest));
+            }
             else
-                DataSource.guestRequests.Add(Cloning.Clon( guestRequest));
+            {
+                DataSource.guestRequests = new List<GuestRequest>();
+                DataSource.guestRequests.Add(Cloning.Clon(guestRequest));
+            }
         }
         public void updateGuestRequest(int guestRequestKey, StatusOrder guestRequestStatus)
         {
             var match = from guest in DS.DataSource.guestRequests
-                        where guestRequestKey == guest.guestRequestkey
+                        where guestRequestKey == guest.GuestRequestKey
                         select guest;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
             else if (match.Count() > 1)
                 throw new dalExeptionMoreThanOneAnswer();
-            match.ToList().RemoveAll(guest => guestRequestKey == guest.guestRequestkey);
+            match.ToList().RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
             match.ToList()[0].status = guestRequestStatus;
             DataSource.guestRequests.Add(Cloning.Clon(match.ToList()[0]));
 
         }
         public void updateGuestRequest(GuestRequest guestRequestKey, GuestRequest guestRequestStatus)
         {
-            updateGuestRequest(guestRequestKey.guestRequestkey, guestRequestStatus.status);
+            updateGuestRequest(guestRequestKey.GuestRequestKey, guestRequestStatus.status);
         }
 
         public void deleteGuestRequest(int guestRequestKey)//if theres more than one matching its will remove all 
         {
             var match = from guest in DS.DataSource.guestRequests
-                        where guestRequestKey == guest.guestRequestkey
+                        where guestRequestKey == guest.GuestRequestKey
                         select guest;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
-            DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.guestRequestkey);
+            DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
         }
         public void deleteGuestRequest(GuestRequest guestRequestKey)
         {
-            deleteGuestRequest(guestRequestKey.guestRequestkey);
+            deleteGuestRequest(guestRequestKey.GuestRequestKey);
         }
 
 
@@ -94,7 +102,7 @@ namespace DAL
                         select hostU;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
-            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.key == hostU.guestRequestkey);
+            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.key == hostU.GuestRequestKey);
         }
 
         //Order

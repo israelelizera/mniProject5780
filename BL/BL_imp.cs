@@ -244,7 +244,7 @@ namespace BL
         public int numOfOrders(GuestRequest guestRequest)
         {
             var list = from order in GetOrders()
-                       where order.GuestRequestKey == guestRequest.guestRequestkey
+                       where order.GuestRequestKey == guestRequest.GuestRequestKey
                        select order;
 
             return list.ToList().Count;
@@ -303,7 +303,7 @@ namespace BL
         public GuestRequest GetGuestRequestByKey(int key)
         {
             var varGuestRequest = from guestRequest in GetGuestRequests()
-                                  where guestRequest.guestRequestkey == key
+                                  where guestRequest.GuestRequestKey == key
                                   select guestRequest;
 
             if (varGuestRequest == null)

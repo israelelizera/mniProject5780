@@ -12,7 +12,7 @@ namespace BE
     {
         int BankNumber;
         string BankName;
-        int BranchNumber;
+        int BranchNumber;//number of snif
         string BranchAddress;
         string BranchCity;
         int BankAccountNumber;

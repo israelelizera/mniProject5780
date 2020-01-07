@@ -11,7 +11,7 @@ namespace DAL
         {
             return new GuestRequest()
             {
-                guestRequestkey = guestRequest.guestRequestkey,
+                GuestRequestKey = guestRequest.GuestRequestKey,
                 PrivateName = guestRequest.PrivateName,
                 FamilyName = guestRequest.FamilyName,
                 MailAddress = guestRequest.MailAddress,
