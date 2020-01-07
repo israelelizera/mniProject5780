@@ -56,4 +56,3 @@ C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstand
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.AssemblyInfo.cs
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.dll
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.pdb
-C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.csprojAssemblyReference.cache
