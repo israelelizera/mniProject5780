@@ -6,7 +6,7 @@ using DAL;
 
 namespace BL
 {
-    class BL_imp : IBL
+   public class BL_imp : IBL
     {
         IDAL dal = FactoryDal.getDal();
 
@@ -244,7 +244,7 @@ namespace BL
         public int numOfOrders(GuestRequest guestRequest)
         {
             var list = from order in GetOrders()
-                       where order.GuestRequestKey == guestRequest.key
+                       where order.GuestRequestKey == guestRequest.guestRequestkey
                        select order;
 
             return list.ToList().Count;
@@ -303,7 +303,7 @@ namespace BL
         public GuestRequest GetGuestRequestByKey(int key)
         {
             var varGuestRequest = from guestRequest in GetGuestRequests()
-                                  where guestRequest.key == key
+                                  where guestRequest.guestRequestkey == key
                                   select guestRequest;
 
             if (varGuestRequest == null)

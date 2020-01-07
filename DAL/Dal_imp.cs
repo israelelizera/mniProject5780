@@ -13,7 +13,7 @@ namespace DAL
         public void addGuestRequest(GuestRequest guestRequest)
         {
             var match = from guest in DS.DataSource.guestRequests
-                        where guestRequest.key == guest.key
+                        where guestRequest.guestRequestkey == guest.guestRequestkey
                         select guest;
             if (match.Count() > 0)
                 throw new dalExeptionIdAlreadyexist();
@@ -23,34 +23,34 @@ namespace DAL
         public void updateGuestRequest(int guestRequestKey, StatusOrder guestRequestStatus)
         {
             var match = from guest in DS.DataSource.guestRequests
-                        where guestRequestKey == guest.key
+                        where guestRequestKey == guest.guestRequestkey
                         select guest;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
             else if (match.Count() > 1)
                 throw new dalExeptionMoreThanOneAnswer();
-            match.ToList().RemoveAll(guest => guestRequestKey == guest.key);
+            match.ToList().RemoveAll(guest => guestRequestKey == guest.guestRequestkey);
             match.ToList()[0].status = guestRequestStatus;
             DataSource.guestRequests.Add(Cloning.Clon(match.ToList()[0]));
 
         }
         public void updateGuestRequest(GuestRequest guestRequestKey, GuestRequest guestRequestStatus)
         {
-            updateGuestRequest(guestRequestKey.key, guestRequestStatus.status);
+            updateGuestRequest(guestRequestKey.guestRequestkey, guestRequestStatus.status);
         }
 
         public void deleteGuestRequest(int guestRequestKey)//if theres more than one matching its will remove all 
         {
             var match = from guest in DS.DataSource.guestRequests
-                        where guestRequestKey == guest.key
+                        where guestRequestKey == guest.guestRequestkey
                         select guest;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
-            DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.key);
+            DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.guestRequestkey);
         }
         public void deleteGuestRequest(GuestRequest guestRequestKey)
         {
-            deleteGuestRequest(guestRequestKey.key);
+            deleteGuestRequest(guestRequestKey.guestRequestkey);
         }
 
 
@@ -94,7 +94,7 @@ namespace DAL
                         select hostU;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntexist();
-            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.key == hostU.key);
+            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.key == hostU.guestRequestkey);
         }
 
         //Order

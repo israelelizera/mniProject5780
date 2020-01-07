@@ -71,3 +71,16 @@ C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstan
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.dll
 C:\Users\yohayon\Source\Repos\israelelizera\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.pdb
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\BE.dll
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\DS.dll
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\BE.pdb
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\bin\Debug\netstandard2.0\DS.pdb
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\DAL\obj\Debug\netstandard2.0\DAL.pdb
