@@ -22,7 +22,6 @@ namespace DAL
                 ReleaseDate = guestRequest.ReleaseDate,
 
                 location = guestRequest.location,
-                SubLocation = guestRequest.SubLocation,
                 Type = guestRequest.Type,
 
                 Adults = guestRequest.Adults,

@@ -15,6 +15,9 @@ namespace BE
         public string FamilyName;
         public string MailAddress;
 
+        public int Adults;
+        public int Children;
+
         public StatusOrder status;
 
         public DateTime RegistrationDate;
@@ -22,12 +25,9 @@ namespace BE
         public DateTime ReleaseDate;
 
         public Location location;
-        public Location SubLocation;
-
         public KindOfUnit Type;
 
-        public int Adults;
-        public int Children;
+        
 
         public Request Pool;
         public Request Jacuzzi;
@@ -50,8 +50,7 @@ namespace BE
                 EntryDate == guestRequest.EntryDate &&
                 ReleaseDate == guestRequest.ReleaseDate &&
 
-                location == guestRequest.location &&
-                SubLocation == guestRequest.SubLocation &&
+                location == guestRequest.location &&                
                 Type == guestRequest.Type &&
 
                 Adults == guestRequest.Adults &&
