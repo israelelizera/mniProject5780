@@ -65,15 +65,23 @@ namespace DAL
         //HostingUnit
         public void addHostingUnit(HostingUnit hostingUnit)
         {
-            var match = from hostU in DS.DataSource.hostingUnits
-                        let equal = hostU.key== hostingUnit.key
-                        where equal
-                        select hostU;
-            if (match.Count() > 0)
-                throw new dalExeptionIdAlreadyexist();
+            if (DataSource.hostingUnits != null)
+            {
+                var match = from hostU in DS.DataSource.hostingUnits
+                            let equal = hostU.key == hostingUnit.key
+                            where equal
+                            select hostU;
+                if (match.Count() > 0)
+                    throw new dalExeptionIdAlreadyexist();
+                else
+                {
+                    DS.DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
+                }
+            }
             else
             {
-                DS.DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
+                DataSource.hostingUnits = new List<HostingUnit>();
+                DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
             }
 
         }
@@ -108,14 +116,22 @@ namespace DAL
         //Order
         public void addOrder(Order order)
         {
-            var match = from anOrder in DataSource.orders
-                        let equal = anOrder.OrderKey == order.OrderKey
-                        where equal
-                        select anOrder;
-            if (match.Count() > 0)
-                throw new dalExeptionIdAlreadyexist();
+            if (DataSource.orders != null)
+            {
+                var match = from anOrder in DataSource.orders
+                            let equal = anOrder.OrderKey == order.OrderKey
+                            where equal
+                            select anOrder;
+                if (match.Count() > 0)
+                    throw new dalExeptionIdAlreadyexist();
+                else
+                {
+                    DataSource.orders.Add(Cloning.Clon(order));
+                }
+            }
             else
             {
+                DataSource.orders = new List<Order>();
                 DataSource.orders.Add(Cloning.Clon(order));
             }
         }
@@ -145,7 +161,7 @@ namespace DAL
         }
         public List<GuestRequest> GetGuestRequests()
         {
-            return DS.DataSource.guestRequests;
+            return Cloning.Clon(DataSource.guestRequests);
 
         }
         public List<HostingUnit> getHostingUnits()

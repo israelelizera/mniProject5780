@@ -15,7 +15,10 @@ namespace BE
         public int FhoneNumber;
         public string MailAddress;
         public BankAccount BankAccount;
-        public bool CollectionClearance;//Certificate of collection from the bank account
+        /// <summary>
+        /// Certificate of collection from the bank account
+        /// </summary>
+        public bool CollectionClearance;
         public List<HostingUnit> hostingUnits;
 
         public override string ToString() { return null; }

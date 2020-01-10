@@ -34,37 +34,14 @@ namespace BE
         public Request ChildrensAttractions;
         public override string ToString()
         {
-            return("G");
-        }
-
-        public virtual bool Equals(GuestRequest guestRequest)
-        {
-            return
-            (
-                GuestRequestKey == guestRequest.GuestRequestKey &&
-                PrivateName == guestRequest.PrivateName &&
-                FamilyName == guestRequest.FamilyName &&
-                MailAddress == guestRequest.MailAddress &&
-
-                status == guestRequest.status &&
-                RegistrationDate == guestRequest.RegistrationDate &&
-                EntryDate == guestRequest.EntryDate &&
-                ReleaseDate == guestRequest.ReleaseDate &&
-
-                location == guestRequest.location &&
-                SubLocation == guestRequest.SubLocation &&
-                Type == guestRequest.Type &&
-
-                Adults == guestRequest.Adults &&
-                Children == guestRequest.Children &&
-
-                Pool == guestRequest.Pool &&
-                Jacuzzi == guestRequest.Jacuzzi &&
-                Garden == guestRequest.Garden &&
-                ChildrensAttractions == guestRequest.ChildrensAttractions
-            );
-        }
-
-
+            return ("GuestRequestKey: " + GuestRequestKey + "\n" + "PrivateName :" + PrivateName + "\n"
+                + "FamilyName: " + FamilyName + "\n" + "MailAddress: " + MailAddress + "\n" + "status: " + status
+                + "\n" + "RegistrationDate: " + RegistrationDate + "\n" + "EntryDate: " + EntryDate + "\n" + "ReleaseDate :"
+                + ReleaseDate + "\n" + "location: " + location + "\n" + "SubLocation: " + SubLocation + "\n" + "Type: " + Type + "\n"
+                + "Adults :" + Adults + "\n" + "Children: " + Children + "\n" + "Pool: " + Pool + "\n" + "Jacuzzi: " + Jacuzzi + "\n"
+                + "Garden: " + Garden + "\n" + "ChildrensAttractions :" + ChildrensAttractions + "\n");
+        }                                                                            
+                                                                                          
+                      
     }
 }

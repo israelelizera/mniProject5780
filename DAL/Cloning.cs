@@ -33,6 +33,18 @@ namespace DAL
                 ChildrensAttractions = guestRequest.ChildrensAttractions
             };
         }
+        public static List<GuestRequest> Clon(this List<GuestRequest> guestRequest)
+        {
+            int counter = 0;
+            List<GuestRequest> retVal=new List<GuestRequest>();
+            foreach (var item in guestRequest)
+            {
+                retVal.Add(Cloning.Clon(guestRequest[counter]));
+                ++counter;
+            }
+
+            return retVal;
+        }
         public static Host Clon(this Host host)
         {
             return new Host()
@@ -47,6 +59,18 @@ namespace DAL
                 hostingUnits = new List<HostingUnit>(host.hostingUnits)
             };
         }
+        public static List<Host> Clon(this List<Host> hosts)
+        {
+            int counter = 0;
+            List<Host> retVal = new List<Host>();
+            foreach (var item in hosts)
+            {
+                retVal.Add(Cloning.Clon(hosts[counter]));
+                ++counter;
+            }
+
+            return retVal;
+        }
         public static HostingUnit Clon(this HostingUnit hostingUnit)
         {
             return new HostingUnit()
@@ -56,6 +80,18 @@ namespace DAL
                 HostingUnitName = hostingUnit.HostingUnitName,
                 Diary = hostingUnit.Diary
             };
+        }
+        public static List<HostingUnit> Clon(this List<HostingUnit> hostingUnit)
+        {
+            int counter = 0;
+            List<HostingUnit> retVal = new List<HostingUnit>();
+            foreach (var item in hostingUnit)
+            {
+                retVal.Add(Cloning.Clon(hostingUnit[counter]));
+                ++counter;
+            }
+
+            return retVal;
         }
 
         public static Order Clon(this Order order)
@@ -69,6 +105,18 @@ namespace DAL
                 CreateDate = order.CreateDate,
                 OrderDate = order.OrderDate
             };
+        }
+        public static List<Order> Clon(this List<Order> orders)
+        {
+            int counter = 0;
+            List<Order> retVal = new List<Order>();
+            foreach (var item in orders)
+            {
+                retVal.Add(Cloning.Clon(orders[counter]));
+                ++counter;
+            }
+
+            return retVal;
         }
     }
 }

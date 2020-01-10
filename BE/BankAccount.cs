@@ -10,15 +10,17 @@ namespace BE
     /// </summary>
     public class BankAccount
     {
-        int BankNumber;
-        string BankName;
-        int BranchNumber;//number of snif
-        string BranchAddress;
-        string BranchCity;
-        int BankAccountNumber;
+       public int BankNumber;
+       public string BankName;
+        /// <summary>
+        /// number of snif
+        /// </summary>
+        public int BranchNumber;
+       public string BranchAddress;
+       public string BranchCity;
         public override string ToString() { return null; }
 
-        BankAccount(int bankNumber, string bankName, int branchNumber,
+        /*BankAccount(int bankNumber, string bankName, int branchNumber,
             string branchAddress, string branchCity, int bankAccountNumber)
         {
             BankNumber = bankNumber;
@@ -27,6 +29,6 @@ namespace BE
             BranchNumber = branchNumber;
             BranchCity = branchCity;
             BankAccountNumber = bankAccountNumber;
-        }
+        }*/
     }
 }
