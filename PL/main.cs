@@ -135,13 +135,20 @@ namespace PL
             Diary4[6,19] = Diary4[ 6,18] = Diary4[ 6,17] = Diary4[6,1] = Diary4[6,2] = Diary4[ 6,3] = true;
 
 
-            HostingUnit hostingUnit = new HostingUnit();
+            HostingUnit hostingUnit1 = new HostingUnit();
             BankAccount bankAccount1 = new BankAccount();
             bankAccount1.BankNumber = 1213;
             bankAccount1.BankName = "Leumi Yeruham";
             bankAccount1.BranchNumber=1234;
             bankAccount1.BranchAddress="Segev 10 ";
             bankAccount1.BranchCity= "Ashdod";
+
+            BankAccount bankAccount2 = new BankAccount();
+            bankAccount1.BankNumber = 14673;
+            bankAccount1.BankName = "Leumi Mercaz Shapira";
+            bankAccount1.BranchNumber = 4378;
+            bankAccount1.BranchAddress = "Hrimon5";
+            bankAccount1.BranchCity = "Tel Aviv ";
 
             Host Host1 = new Host();
             Host1.HostKey = 12343;
@@ -153,50 +160,52 @@ namespace PL
             Host1.CollectionClearance = true;
             Host1.hostingUnits = hoster1;
 
-            hostingUnit.Owner = Host1;
-            hostingUnit.HostingUnitName = "zimer1";
-            hostingUnit.Diary = Diary1;
-            hoster1.Add(hostingUnit);
-            bL.addHostingUnit(hostingUnit);
+            Host Host2 = new Host();
+            Host2.HostKey = 9089;
+            Host2.PrivateName = "Shimon";
+            Host2.FamilyName = "Dadoun";
+            Host2.FhoneNumber = 0527618868;
+            Host2.MailAddress = "Sdadoun@gmail.com";
+            Host2.BankAccount = bankAccount2;
+            Host2.CollectionClearance = true;
+            Host2.hostingUnits = hoster2;
+
+
+            hostingUnit1.Owner = Host1;
+            hostingUnit1.HostingUnitName = "zimer1";
+            hostingUnit1.Diary = Diary1;
+            hostingUnit1.location = Location.North;
+            hoster1.Add(hostingUnit1);
+            bL.addHostingUnit(hostingUnit1);
 
             HostingUnit hostingUnit2 = new HostingUnit();
-            hostingUnit.Owner = Host1;
-            hostingUnit.HostingUnitName = "zimer2";
-            hostingUnit.Diary = Diary2;
+            hostingUnit2.Owner = Host1;
+            hostingUnit2.HostingUnitName = "zimer2";
+            hostingUnit2.Diary = Diary2;
+            hostingUnit2.location = Location.North;
             hoster1.Add(hostingUnit2);
             bL.addHostingUnit(hostingUnit2);
-
-
-            BankAccount bankAccount2 = new BankAccount();
-            bankAccount1.BankNumber = 14673;
-            bankAccount1.BankName = "Leumi Mercaz Shapira";
-            bankAccount1.BranchNumber = 4378;
-            bankAccount1.BranchAddress = "Hrimon5";
-            bankAccount1.BranchCity = "Tel Aviv ";
-
-            Host Host2 = new Host();
-            Host1.HostKey = 9089;
-            Host1.PrivateName = "Shimon";
-            Host1.FamilyName = "Dadoun";
-            Host1.FhoneNumber = 0527618868;
-            Host1.MailAddress = "Sdadoun";
-            Host1.BankAccount = bankAccount2;
-            Host1.CollectionClearance = true;
-            Host1.hostingUnits = hoster2;
 
             HostingUnit hostingUnit3 = new HostingUnit();
             hostingUnit3.Owner = Host2;
             hostingUnit3.HostingUnitName = "hotel1";
             hostingUnit3.Diary = Diary3;
+            hostingUnit3.location = Location.Center;
             hoster2.Add(hostingUnit3);
             bL.addHostingUnit(hostingUnit3);
 
             HostingUnit hostingUnit4 = new HostingUnit();
-            hostingUnit.Owner = Host2;
-            hostingUnit.HostingUnitName = "hotel2";
-            hostingUnit.Diary = Diary4;
+            hostingUnit4.Owner = Host2;
+            hostingUnit4.HostingUnitName = "hotel2";
+            hostingUnit4.Diary = Diary4;
+            hostingUnit4.location = Location.Center;
             hoster2.Add(hostingUnit4);
             bL.addHostingUnit(hostingUnit4);
+
+            foreach (var item in bL.getHostingUnits())
+            {
+                Console.WriteLine(item.ToString())  ;
+            }
 
 
 

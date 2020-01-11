@@ -78,7 +78,8 @@ namespace DAL
                 key = hostingUnit.key,
                 Owner = hostingUnit.Owner,
                 HostingUnitName = hostingUnit.HostingUnitName,
-                Diary = hostingUnit.Diary
+                Diary = hostingUnit.Diary,
+                location = hostingUnit.location
             };
         }
         public static List<HostingUnit> Clon(this List<HostingUnit> hostingUnit)

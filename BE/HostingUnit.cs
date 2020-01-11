@@ -15,7 +15,31 @@ namespace BE
         public int key = Configuration.getHostingUnitKeyTempPlusOne();
         public Location location;
 
-        public override string ToString() { return null; }
+        public override string ToString() 
+        { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
+                "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "key: " + key +"\n"+
+                "location: " + location + "\n") ; }
+        private List< DateTime> printDiary()
+        {
+            List<DateTime> retVal=new List<DateTime>();
+            for (int i = 0; i < 12; i++)
+            {
+                for (int j = 0; j < 31; ++j)
+                    if (Diary[i, j])
+                        retVal.Add(new DateTime(DateTime.Now.Year, i, j));
+            }
+            return retVal;
+        }
+        private String printDateTime(List<DateTime> dateTimes)
+        {
+            string retVal="";
+            foreach (var item in dateTimes)
+            {
+                retVal+= (string)(item.ToString())+" \n";
+            }
+            return retVal;
+        }
+
 
         /// <summary>
         /// The function receives date and days of vacation, and returns if the unit is available.
