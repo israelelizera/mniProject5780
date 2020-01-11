@@ -100,6 +100,7 @@ namespace DAL
             match.ToList()[0].Diary = diary;
             HostingUnit matchHosting = new HostingUnit();
             matchHosting = match.ToList()[0];
+            DataSource.hostingUnits.RemoveAll(hostU => hostingUnitKey == hostU.key);
             DataSource.hostingUnits.Add(matchHosting);
         }
         public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
@@ -153,6 +154,7 @@ namespace DAL
             match.ToList()[0].status = status;
             Order matchOrder = new Order();
             matchOrder = match.ToList()[0];
+            DataSource.orders.RemoveAll(anOrder => anOrder.OrderKey == orderKey);
             DataSource.orders.Add(matchOrder);
         }
        public void updateOrder(Order order, Order orderUpdate)

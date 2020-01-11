@@ -214,7 +214,7 @@ namespace PL
              }
 
             //--------------Orders--------------
-
+/*
             Order order1 = new Order();
             order1.HostingUnitKey = 9087;
             order1.GuestRequestKey = 8576;
@@ -236,7 +236,7 @@ namespace PL
             {
                 Console.WriteLine(item.ToString());
             }
-           
+           */
             Console.ReadKey();
             
         }
