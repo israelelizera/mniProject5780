@@ -213,30 +213,40 @@ namespace PL
                  Console.WriteLine(item.ToString())  ;
              }
 
-            //--------------Orders--------------
-/*
-            Order order1 = new Order();
-            order1.HostingUnitKey = 9087;
-            order1.GuestRequestKey = 8576;
-            order1.OrderKey = 1254;
-            order1.status = StatusOrder.SentEmail;
-            order1.CreateDate = new DateTime(08 / 09 / 2020);
-            order1.OrderDate = new DateTime(11 / 09 / 2020);
-            bL.addOrder(order1);
-
-            Order order2 = new Order();
-            order1.HostingUnitKey = 45856;
-            order1.GuestRequestKey = 9376;
-            order1.OrderKey = 1255;
-            order1.status = StatusOrder.NotAddressed;
-            order1.CreateDate = new DateTime(07 / 06 / 2020);
-            order1.OrderDate = new DateTime(10 / 06 / 2020);
-            bL.addOrder(order2);
-            foreach (var item in bL.GetOrders())
+            List<HostingUnit> help = new List<HostingUnit>();
+            help=bL.freeHostingUnits(new DateTime(2020, 2, 3), 2);
+            foreach (var item in help)
             {
                 Console.WriteLine(item.ToString());
             }
-           */
+            Console.WriteLine( bL.daysBetween(new DateTime(2020,1,11),new DateTime(2020,2,11)));
+            Console.WriteLine(bL.daysBetween(new DateTime(2020, 1, 11)));
+
+
+            //--------------Orders--------------
+            /*
+                        Order order1 = new Order();
+                        order1.HostingUnitKey = 9087;
+                        order1.GuestRequestKey = 8576;
+                        order1.OrderKey = 1254;
+                        order1.status = StatusOrder.SentEmail;
+                        order1.CreateDate = new DateTime(08 / 09 / 2020);
+                        order1.OrderDate = new DateTime(11 / 09 / 2020);
+                        bL.addOrder(order1);
+
+                        Order order2 = new Order();
+                        order1.HostingUnitKey = 45856;
+                        order1.GuestRequestKey = 9376;
+                        order1.OrderKey = 1255;
+                        order1.status = StatusOrder.NotAddressed;
+                        order1.CreateDate = new DateTime(07 / 06 / 2020);
+                        order1.OrderDate = new DateTime(10 / 06 / 2020);
+                        bL.addOrder(order2);
+                        foreach (var item in bL.GetOrders())
+                        {
+                            Console.WriteLine(item.ToString());
+                        }
+                       */
             Console.ReadKey();
             
         }

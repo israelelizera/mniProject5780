@@ -205,7 +205,7 @@ namespace BL
                        where unit.AvailableOnDate(dateTime, day)
                        select unit;
 
-            return list.ToList();
+               return list.ToList();
         }
 
         public int daysBetween(DateTime date1, DateTime date2)

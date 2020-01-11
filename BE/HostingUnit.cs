@@ -26,7 +26,7 @@ namespace BE
             {
                 for (int j = 0; j < 31; ++j)
                     if (Diary[i, j])
-                        retVal.Add(new DateTime(DateTime.Now.Year, i, j));
+                        retVal.Add(new DateTime(DateTime.Now.Year, i+1, j+1));
             }
             return retVal;
         }
@@ -49,7 +49,7 @@ namespace BE
         /// <returns></returns>
         public bool AvailableOnDate(DateTime dateTime, int days)
         {
-            int startIndexInDiary = dateTime.Day - 1 + (dateTime.Month - 1) * 31;
+            int startIndexInDiary = dateTime.Day+ (dateTime.Month) * 31;
             int endIndexInDiary = startIndexInDiary + days;
 
             for (int i = startIndexInDiary; i < endIndexInDiary; i++)
