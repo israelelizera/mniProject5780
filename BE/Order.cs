@@ -16,7 +16,11 @@ namespace BE
         public DateTime CreateDate;
         public DateTime OrderDate;
 
-        public override string ToString() { return null; }
+        public override string ToString() {
+            return ("HostingUnitKey: "+HostingUnitKey+"\n"+ "GuestRequestKey: "+ GuestRequestKey+"\n"
+                + "OrderKey: "+ OrderKey+"\n"+ "status: "+status+"\n"+ "CreateDate: "+ CreateDate+"\n"+
+              "OrderDate: "+ OrderDate+"\n");
+        }
         public virtual bool Equals(Order order)
         {
             return (HostingUnitKey == order.HostingUnitKey &&

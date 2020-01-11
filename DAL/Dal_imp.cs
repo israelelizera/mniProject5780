@@ -39,8 +39,10 @@ namespace DAL
                 throw new dalExeptionMoreThanOneAnswer();
             match.ToList().RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
             match.ToList()[0].status = guestRequestStatus;
-            DataSource.guestRequests.Add(Cloning.Clon(match.ToList()[0]));
-
+            GuestRequest matchGuest = new GuestRequest();
+            matchGuest = match.ToList()[0];
+            DataSource.guestRequests.RemoveAll(guest => guestRequestKey == guest.GuestRequestKey);
+            DataSource.guestRequests.Add(matchGuest);
         }
         public void updateGuestRequest(GuestRequest guestRequestKey, GuestRequest guestRequestStatus)
         {
@@ -96,7 +98,9 @@ namespace DAL
                 throw new dalExeptionMoreThanOneAnswer();
             match.ToList().RemoveAll(hostU  => hostingUnitKey == hostU.key);
             match.ToList()[0].Diary = diary;
-            DataSource.hostingUnits.Add(Cloning.Clon(match.ToList()[0]));
+            HostingUnit matchHosting = new HostingUnit();
+            matchHosting = match.ToList()[0];
+            DataSource.hostingUnits.Add(matchHosting);
         }
         public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
         {
@@ -147,7 +151,9 @@ namespace DAL
                 throw new dalExeptionMoreThanOneAnswer();
             match.ToList().RemoveAll(anOrder => anOrder.OrderKey  == orderKey);
             match.ToList()[0].status = status;
-            DataSource.orders.Add(match.ToList()[0]);
+            Order matchOrder = new Order();
+            matchOrder = match.ToList()[0];
+            DataSource.orders.Add(matchOrder);
         }
        public void updateOrder(Order order, Order orderUpdate)
         {

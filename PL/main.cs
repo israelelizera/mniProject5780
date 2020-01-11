@@ -15,7 +15,7 @@ namespace PL
         static void Main(string[] args)
         {
             BL_imp bL = new BL_imp();
-            /* GuestRequest guestRequest1=new GuestRequest();
+          /*  GuestRequest guestRequest1=new GuestRequest();
              guestRequest1.PrivateName = "Yehuda";
              guestRequest1.FamilyName = "Ohayon";
              guestRequest1.MailAddress = "Oha123@gmail.com";
@@ -93,29 +93,29 @@ namespace PL
              guestRequest4.ChildrensAttractions = Request.necessary;
              bL.addGuestRequest(guestRequest4);
 
-                 foreach(GuestRequest item in bL.GetGuestRequests())
-             {
-                 Console.WriteLine(item.ToString());
-             }
-             bL.deleteGuestRequest(guestRequest4);
-             /*foreach (GuestRequest item in bL.GetGuestRequests())
+            /*     foreach(GuestRequest item in bL.GetGuestRequests())
              {
                  Console.WriteLine(item.ToString());
              }*/
             // bL.deleteGuestRequest(guestRequest4);
-            // bL.updateGuestRequest(guestRequest3, guestRequest2);
             /* foreach (GuestRequest item in bL.GetGuestRequests())
              {
                  Console.WriteLine(item.ToString());
-             }
-             guestRequest2= bL.GetGuestRequests()[0];
+             }*/
+            // bL.deleteGuestRequest(guestRequest4);
+             /*bL.updateGuestRequest(guestRequest3, guestRequest2);
+             foreach (GuestRequest item in bL.GetGuestRequests())
+             {
+                 Console.WriteLine(item.ToString());
+             }*/
+            /* guestRequest2= bL.GetGuestRequests()[0];
              guestRequest2.Adults = 9;
              bL.GetGuestRequests()[1].Adults = 9;
                  foreach (GuestRequest item in bL.GetGuestRequests())
              {
                  Console.WriteLine(item.ToString());
              }*/
-
+             
             //--------------hosting unit---------------
             bool[,] Diary1 = new bool[12, 31];
             bool[,] Diary2 = new bool[12, 31];
@@ -134,8 +134,8 @@ namespace PL
             Diary3[ 2,21] = Diary3[ 2,22] = Diary3[2,23] = Diary3[3,17] = Diary3[3,18] = Diary3[3,19] = true;
             Diary4[6,19] = Diary4[ 6,18] = Diary4[ 6,17] = Diary4[6,1] = Diary4[6,2] = Diary4[ 6,3] = true;
 
+            //--------------------BankAccounts-----------------------
 
-            HostingUnit hostingUnit1 = new HostingUnit();
             BankAccount bankAccount1 = new BankAccount();
             bankAccount1.BankNumber = 1213;
             bankAccount1.BankName = "Leumi Yeruham";
@@ -149,6 +149,8 @@ namespace PL
             bankAccount1.BranchNumber = 4378;
             bankAccount1.BranchAddress = "Hrimon5";
             bankAccount1.BranchCity = "Tel Aviv ";
+
+            //--------------------hosts------------------------
 
             Host Host1 = new Host();
             Host1.HostKey = 12343;
@@ -170,7 +172,9 @@ namespace PL
             Host2.CollectionClearance = true;
             Host2.hostingUnits = hoster2;
 
-
+            //-----------------------hostingUnits---------------------------
+           
+            HostingUnit hostingUnit1 = new HostingUnit();
             hostingUnit1.Owner = Host1;
             hostingUnit1.HostingUnitName = "zimer1";
             hostingUnit1.Diary = Diary1;
@@ -202,20 +206,41 @@ namespace PL
             hoster2.Add(hostingUnit4);
             bL.addHostingUnit(hostingUnit4);
 
-            foreach (var item in bL.getHostingUnits())
+            bL.updateHostingUnit(hostingUnit4, hostingUnit1);
+
+             foreach (var item in bL.getHostingUnits())
+             {
+                 Console.WriteLine(item.ToString())  ;
+             }
+
+            //--------------Orders--------------
+
+            Order order1 = new Order();
+            order1.HostingUnitKey = 9087;
+            order1.GuestRequestKey = 8576;
+            order1.OrderKey = 1254;
+            order1.status = StatusOrder.SentEmail;
+            order1.CreateDate = new DateTime(08 / 09 / 2020);
+            order1.OrderDate = new DateTime(11 / 09 / 2020);
+            bL.addOrder(order1);
+
+            Order order2 = new Order();
+            order1.HostingUnitKey = 45856;
+            order1.GuestRequestKey = 9376;
+            order1.OrderKey = 1255;
+            order1.status = StatusOrder.NotAddressed;
+            order1.CreateDate = new DateTime(07 / 06 / 2020);
+            order1.OrderDate = new DateTime(10 / 06 / 2020);
+            bL.addOrder(order2);
+            foreach (var item in bL.GetOrders())
             {
-                Console.WriteLine(item.ToString())  ;
+                Console.WriteLine(item.ToString());
             }
-
-
-
-
-
-
-
-
+           
             Console.ReadKey();
+            
         }
+        
     }
 }
 
