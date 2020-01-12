@@ -290,7 +290,7 @@ namespace BL
 
         public HostingUnit GetHostingUnitByKey(int key)
         {
-            var varHostingUnit = from hostingUnit in getHostingUnits()
+                var varHostingUnit = from hostingUnit in getHostingUnits()
                                  where hostingUnit.hostinUnitkey == key
                                  select hostingUnit;
 
