@@ -12,12 +12,12 @@ namespace BE
         public Host Owner;
         public string HostingUnitName;
         public bool[,] Diary = new bool[12, 31];
-        public int key = Configuration.getHostingUnitKeyTempPlusOne();
+        public int hostinUnitkey = Configuration.getHostingUnitKeyTempPlusOne();
         public Location location;
 
         public override string ToString() 
         { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
-                "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "key: " + key +"\n"+
+                "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
                 "location: " + location + "\n") ; }
         private List< DateTime> printDiary()
         {
@@ -72,7 +72,7 @@ namespace BE
 
         public virtual bool Equals(HostingUnit hostingUnit)
         {
-            return (key == hostingUnit.key &&
+            return (hostinUnitkey == hostingUnit.hostinUnitkey &&
              Owner == hostingUnit.Owner &&
              HostingUnitName == hostingUnit.HostingUnitName &&
              Diary == hostingUnit.Diary);

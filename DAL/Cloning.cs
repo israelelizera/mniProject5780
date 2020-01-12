@@ -75,7 +75,7 @@ namespace DAL
         {
             return new HostingUnit()
             {
-                key = hostingUnit.key,
+                hostinUnitkey = hostingUnit.hostinUnitkey,
                 Owner = hostingUnit.Owner,
                 HostingUnitName = hostingUnit.HostingUnitName,
                 Diary = hostingUnit.Diary,

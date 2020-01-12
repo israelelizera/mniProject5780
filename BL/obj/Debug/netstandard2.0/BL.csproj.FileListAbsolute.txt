@@ -86,3 +86,19 @@ C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BL\obj\Debug\netstandard2.0\BL.csproj.CopyComplete
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BL\obj\Debug\netstandard2.0\BL.dll
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BL\obj\Debug\netstandard2.0\BL.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\BL.deps.json
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\BL.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\BL.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\BE.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\DS.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\BE.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\bin\Debug\netstandard2.0\DS.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.csprojAssemblyReference.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.csproj.CoreCompileInputs.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.AssemblyInfoInputs.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.AssemblyInfo.cs
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.csproj.CopyComplete
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BL\obj\Debug\netstandard2.0\BL.pdb

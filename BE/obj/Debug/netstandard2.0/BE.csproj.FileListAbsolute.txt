@@ -64,3 +64,12 @@ C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BE\bin\Debug\netstandard2.0\BE.deps.json
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BE\bin\Debug\netstandard2.0\BE.dll
 C:\Users\elize\Desktop\מדעי המחשב\מיני פרויקט בחלונות\h vg\mniProject5780\BE\bin\Debug\netstandard2.0\BE.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\bin\Debug\netstandard2.0\BE.deps.json
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\bin\Debug\netstandard2.0\BE.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\bin\Debug\netstandard2.0\BE.pdb
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.csprojAssemblyReference.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.csproj.CoreCompileInputs.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.AssemblyInfoInputs.cache
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.AssemblyInfo.cs
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.dll
+C:\Users\sdadoun\Source\Repos\israelelizera\mniProject5780\BE\obj\Debug\netstandard2.0\BE.pdb

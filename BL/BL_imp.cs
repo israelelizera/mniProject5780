@@ -118,7 +118,7 @@ namespace BL
         {
             //Checks if there is an open invitation for this hosting unit
             var hostingUnitOreder = from order in GetOrders()
-                                    where (order.HostingUnitKey == hostingUnit.key) &&
+                                    where (order.HostingUnitKey == hostingUnit.hostinUnitkey) &&
                                             (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
                                     select order;
 
@@ -253,7 +253,7 @@ namespace BL
         public int OrdersSentOrClosed(HostingUnit hostingUnit)
         {
             var list = from order in GetOrders()
-                       where order.HostingUnitKey == hostingUnit.key
+                       where order.HostingUnitKey == hostingUnit.hostinUnitkey
                        select order;
 
             return list.ToList().Count;
@@ -291,13 +291,13 @@ namespace BL
         public HostingUnit GetHostingUnitByKey(int key)
         {
             var varHostingUnit = from hostingUnit in getHostingUnits()
-                                 where hostingUnit.key == key
+                                 where hostingUnit.hostinUnitkey == key
                                  select hostingUnit;
 
-            if (varHostingUnit == null)
+            if (!varHostingUnit.Any())
                 throw new BLexception.HostingUnitDoesntExistException();
 
-            return (HostingUnit)varHostingUnit;
+            return varHostingUnit.ToList()[0];
         }
 
         public GuestRequest GetGuestRequestByKey(int key)
@@ -306,10 +306,10 @@ namespace BL
                                   where guestRequest.GuestRequestKey == key
                                   select guestRequest;
 
-            if (varGuestRequest == null)
+            if (!varGuestRequest.Any())
                 throw new BLexception.GuestRequestDoesntExistException();
 
-            return (GuestRequest)varGuestRequest;
+            return varGuestRequest.ToList()[0];
         }
     }
 }
