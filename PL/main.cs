@@ -15,7 +15,7 @@ namespace PL
         static void Main(string[] args)
         {
             BL_imp bL = new BL_imp();
-          /*  GuestRequest guestRequest1=new GuestRequest();
+             GuestRequest guestRequest1=new GuestRequest();
              guestRequest1.PrivateName = "Yehuda";
              guestRequest1.FamilyName = "Ohayon";
              guestRequest1.MailAddress = "Oha123@gmail.com";
@@ -80,7 +80,7 @@ namespace PL
              guestRequest4.FamilyName = "Booskila";
              guestRequest4.MailAddress = "habbabBoski@gmail.com";
              guestRequest4.Adults = 4;
-             guestRequest4.Children = 2;
+             guestRequest4.Children = 7;
              guestRequest4.status = StatusOrder.ClosedForCustomerResponse;
              guestRequest4.RegistrationDate = new DateTime(2020, 3, 7);
              guestRequest4.EntryDate = new DateTime(2020, 3, 14);
@@ -108,13 +108,13 @@ namespace PL
              {
                  Console.WriteLine(item.ToString());
              }*/
-            /* guestRequest2= bL.GetGuestRequests()[0];
+             guestRequest2= bL.GetGuestRequests()[0];
              guestRequest2.Adults = 9;
              bL.GetGuestRequests()[1].Adults = 9;
                  foreach (GuestRequest item in bL.GetGuestRequests())
              {
                  Console.WriteLine(item.ToString());
-             }*/
+             }
              
             //--------------hosting unit---------------
             bool[,] Diary1 = new bool[12, 31];
@@ -221,10 +221,17 @@ namespace PL
             }
             Console.WriteLine( bL.daysBetween(new DateTime(2020,1,11),new DateTime(2020,2,11)));
             Console.WriteLine(bL.daysBetween(new DateTime(2020, 1, 11)));
+            Func<GuestRequest,bool> func = (guest) => guest.Children > 3;
+            List<GuestRequest>funcRet=bL.GetGuestRequestByFunc(func);
+            foreach (var item in funcRet)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
 
 
             //--------------Orders--------------
-            /*
+            
                         Order order1 = new Order();
                         order1.HostingUnitKey = 9087;
                         order1.GuestRequestKey = 8576;
@@ -246,7 +253,7 @@ namespace PL
                         {
                             Console.WriteLine(item.ToString());
                         }
-                       */
+                       
             Console.ReadKey();
             
         }
