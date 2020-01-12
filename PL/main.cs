@@ -242,12 +242,12 @@ namespace PL
             bL.addOrder(order1);
 
             Order order2 = new Order();
-            order1.HostingUnitKey = 10000001;
-            order1.GuestRequestKey = 10000003;
-            order1.OrderKey = 1255;
-            order1.status = StatusOrder.NotAddressed;
-            order1.CreateDate = new DateTime(07 / 06 / 2020);
-            order1.OrderDate = new DateTime(10 / 06 / 2020);
+            order2  .HostingUnitKey = 10000001;
+            order2.GuestRequestKey = 10000003;
+            order2.OrderKey = 1255;
+            order2.status = StatusOrder.NotAddressed;
+            order2.CreateDate = new DateTime(07 / 06 / 2020);
+            order2.OrderDate = new DateTime(10 / 06 / 2020);
             bL.addOrder(order2);
             foreach (var item in bL.GetOrders())
             {
