@@ -87,6 +87,9 @@ namespace BL
             if (hostingUnit.Diary == null)
                 throw new BLexception.DiaryIsNullException();
 
+            if(hostingUnit.capacity<=0)
+                throw new BLexception.DiaryIsNullException();
+
             try
             {
                 dal.addHostingUnit(hostingUnit);

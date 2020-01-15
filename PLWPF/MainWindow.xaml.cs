@@ -24,16 +24,8 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
+            new AddHostingUnit().Show();
+            Close();
         }
     }
 }

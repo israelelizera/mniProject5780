@@ -16,14 +16,17 @@ namespace BE
         public Location location;
         public KindOfUnit Type;
         public int capacity;
+
         public bool Pool;
         public bool Jacuzzi;
         public bool Garden;
         public bool ChildrensAttractions;
+
         public override string ToString() 
         { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
                 "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
                 "location: " + location + "\n") ; }
+
         private List< DateTime> printDiary()
         {
             List<DateTime> retVal=new List<DateTime>();
@@ -35,6 +38,7 @@ namespace BE
             }
             return retVal;
         }
+
         private String printDateTime(List<DateTime> dateTimes)
         {
             string retVal="";
@@ -44,6 +48,7 @@ namespace BE
             }
             return retVal;
         }
+
         /// <summary>
         /// The function receives date and days of vacation, and returns if the unit is available.
         /// </summary>
@@ -59,6 +64,7 @@ namespace BE
                 if (Diary[i / 12, i % 31]) return false;
             return true;
         }
+
         public bool AvailableOnDate(GuestRequest guestRequest)
         {
             DateTime EntryDate = guestRequest.EntryDate;
@@ -71,6 +77,7 @@ namespace BE
                 if (Diary[i / 12, i % 31]) return false;
             return true;
         }
+
         public virtual bool Equals(HostingUnit hostingUnit)
         {
             return (hostinUnitkey == hostingUnit.hostinUnitkey &&

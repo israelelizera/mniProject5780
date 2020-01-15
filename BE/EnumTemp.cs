@@ -34,6 +34,6 @@
     /// <summary>
     /// GuesRoom, Apartment, HotelRoom, Tent
     /// </summary>
-    public enum KindOfUnit { GuesRoom, Apartment, HotelRoom, Tent };
+    public enum KindOfUnit { GuesRoom, Apartment, HotelRoom, Tent, hut};
 }
 

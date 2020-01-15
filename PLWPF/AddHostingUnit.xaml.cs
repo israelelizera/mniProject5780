@@ -31,9 +31,20 @@ namespace PLWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            bool success = true;
+
             try
             {
+                
+
                 HostingUnit.HostingUnitName = HostingUnitName.Text;
+                HostingUnit.location = (BE.Location)Location.SelectedIndex;
+                HostingUnit.Type = (BE.KindOfUnit)KindOfUnit.SelectedIndex;
+                HostingUnit.capacity = int.Parse(capacity.Text);
+                HostingUnit.Pool = (bool) pool.IsChecked;
+                HostingUnit.ChildrensAttractions = (bool)ChildrensAttractions.IsChecked;
+                HostingUnit.Garden = (bool)Garden.IsChecked;
+                HostingUnit.Jacuzzi = (bool)Jacuzzi.IsChecked;
 
                 bL.addHostingUnit(HostingUnit);
                 HostingUnit = new BE.HostingUnit();
@@ -43,17 +54,25 @@ namespace PLWPF
             catch (FormatException)
             {
                 MessageBox.Show("check your input and try again");
+                success = false;
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                success = false;
             }
+
+            if(success)
+            {
+                MessageBox.Show("The addition was successful");
+                Close();
+            }
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void cancel(object sender, RoutedEventArgs e)
         {
-            Close();
-            new MainWindow().Show();
+            Close();           
         }
     }
 }
