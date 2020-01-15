@@ -19,14 +19,41 @@ namespace PLWPF
     /// </summary>
     public partial class AddHostingUnit : Window
     {
+        BE.HostingUnit HostingUnit;
+        BL.IBL bL;
+
         public AddHostingUnit()
         {
             InitializeComponent();
+            HostingUnit = new BE.HostingUnit();
+            bL = new BL.BL_imp();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                HostingUnit.HostingUnitName = HostingUnitName.Text;
 
+                bL.addHostingUnit(HostingUnit);
+                HostingUnit = new BE.HostingUnit();
+
+                HostingUnitName.ClearValue(TextBox.TextProperty);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("check your input and try again");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
+            new MainWindow().Show();
         }
     }
 }

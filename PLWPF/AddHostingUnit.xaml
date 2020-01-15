@@ -9,8 +9,9 @@
     <Grid>
         <TextBlock Text="Add hosting unit" FontSize="36" Margin="1,1,519,369"/>
         <TextBlock Text="hosting unit name:" Margin="40,81,615,316" FontSize="16"/>
-        <TextBox  Height="19" Margin="182,84,492,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="HostingUnitName"  Height="19" Margin="182,84,492,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" IsEnabled="False"/>
         <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="691,376,0,0" Click="Button_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="608,376,0,0" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
