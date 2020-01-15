@@ -14,21 +14,16 @@ namespace BE
         public string PrivateName;
         public string FamilyName;
         public string MailAddress;
-
-        public StatusOrder status; /*NotAddressed,SentEmail,ClosedForCustomerUnresponsiveness,ClosedForCustomerResponse*/
-
+        public StatusOrder status;
         public DateTime RegistrationDate;
         public DateTime EntryDate;
         public DateTime ReleaseDate;
-
-        public Location location;/*All, North, South, Center, Jerusalem*/
+        public Location location;
         public Location SubLocation;
-        public KindOfUnit Type;/* GuesRoom, Apartment, HotelRoom, Tent*/
-
+        public KindOfUnit Type;
         public int Adults { get; set; }
         public int Children { get; set; }
-
-        public Request Pool;/*All,North,South,Center,Jerusalem*/
+        public Request Pool;
         public Request Jacuzzi;
         public Request Garden;
         public Request ChildrensAttractions;
@@ -40,8 +35,6 @@ namespace BE
                 + ReleaseDate + "\n" + "location: " + location + "\n" + "SubLocation: " + SubLocation + "\n" + "Type: " + Type + "\n"
                 + "Adults :" + Adults + "\n" + "Children: " + Children + "\n" + "Pool: " + Pool + "\n" + "Jacuzzi: " + Jacuzzi + "\n"
                 + "Garden: " + Garden + "\n" + "ChildrensAttractions :" + ChildrensAttractions + "\n");
-        }                                                                            
-                                                                                          
-                      
+        }                                                                                                
     }
 }

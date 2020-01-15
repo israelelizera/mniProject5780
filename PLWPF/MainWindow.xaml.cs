@@ -24,7 +24,6 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
-            IBL myBL = new BL_imp();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)

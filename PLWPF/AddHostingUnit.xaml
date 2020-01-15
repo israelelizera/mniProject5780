@@ -9,9 +9,21 @@
     <Grid>
         <TextBlock Text="Add hosting unit" FontSize="36" Margin="1,1,519,369"/>
         <TextBlock Text="hosting unit name:" Margin="40,81,615,316" FontSize="16"/>
-        <TextBox x:Name="HostingUnitName"  Height="19" Margin="182,84,492,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="HostingUnitName"  Height="19" Margin="182,84,492,316"/>
         <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="691,376,0,0" Click="Button_Click"/>
         <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="608,376,0,0" Click="Button_Click_1"/>
+
+        <StackPanel Margin="182,124,492,273" RenderTransformOrigin="1.681,-1.326">
+            <ComboBox>
+                <ComboBoxItem Content="All" />
+                <ComboBoxItem Content="North" />
+                <ComboBoxItem Content="South" />
+                <ComboBoxItem Content="Center" />
+                <ComboBoxItem Content="Jerusalem" />
+            </ComboBox>
+        </StackPanel>
+        
+        <TextBlock Text="choose Location:" Margin="40,124,624,273" FontSize="16"/>
 
     </Grid>
 </Window>
