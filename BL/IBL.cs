@@ -6,7 +6,7 @@ using BE;
 
 namespace BL
 {
-    interface IBL
+   public interface IBL
     {
         //------------------------GuestRequest------------------------------
         void addGuestRequest(GuestRequest guestRequest);
