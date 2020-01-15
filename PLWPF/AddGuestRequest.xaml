@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="AddGuestRequest" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="48,30,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="247,44,0,0" TextWrapping="Wrap" Text="Add guest request" VerticalAlignment="Top" Width="301" Height="50" FontSize="36"/>
+        <TextBlock x:Name="PrivateName" HorizontalAlignment="Left" Margin="61,138,0,0" TextWrapping="Wrap" Text="Private name:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="FamilyName" HorizontalAlignment="Left" Margin="61,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Family name:"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="Mail" HorizontalAlignment="Left" Margin="61,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Mail:"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="14" Margin="199,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"/>
+        <TextBox x:Name="MailBox" HorizontalAlignment="Left" Height="14" Margin="199,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"/>
+        <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="14" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"/>
 
     </Grid>
 </Window>

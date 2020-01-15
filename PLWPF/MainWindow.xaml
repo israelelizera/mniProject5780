@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="7,14,-7,-14">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="312" Margin="243,25,0,0" FontWeight="Bold" FontSize="36"><Run Text="Add "/><Run Text="guest request"/><Run Text=""/></TextBlock>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="60,99,0,0" TextWrapping="Wrap" Text="Private Name:" VerticalAlignment="Top" Width="76"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="60,150,0,0" TextWrapping="Wrap" Text="Family Name:" VerticalAlignment="Top" Width="76"/>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="60,197,0,0" TextWrapping="Wrap" Text="Mail:" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="16" Margin="155,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="16" Margin="155,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="16" Margin="155,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Add&#xD;&#xA;" HorizontalAlignment="Left" Margin="607,356,0,0" VerticalAlignment="Top" Width="119" Height="27" Click="button_Click" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+
     </Grid>
 </Window>
