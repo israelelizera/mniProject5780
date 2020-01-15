@@ -26,7 +26,36 @@ namespace PLWPF
         {
             InitializeComponent();
             guestRequest = new GuestRequest();
+            this.GuestRequestDetails.DataContext = guestRequest;
             bL = new BL.BL_imp();
+            this.LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
+            this.TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
+            this.PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            this.JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            this.GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            this.ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                bL.addGuestRequest(guestRequest);
+                guestRequest = new GuestRequest();
+                this.DataContext = guestRequest;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Data.CollectionViewSource guestRequestViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("guestRequestViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // guestRequestViewSource.Source = [generic data source]
         }
     }
 }
