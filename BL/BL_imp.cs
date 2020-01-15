@@ -58,7 +58,7 @@ namespace BL
 
             try
             {
-                dal.updateGuestRequest(guestRequest, guestRequestUpdate);
+                dal.updateGuestRequest(guestRequest, guestRequest);
             }
             catch (Exception e)
             {

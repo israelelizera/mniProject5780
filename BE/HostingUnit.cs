@@ -19,6 +19,7 @@ namespace BE
         { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
                 "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
                 "location: " + location + "\n") ; }
+
         private List< DateTime> printDiary()
         {
             List<DateTime> retVal=new List<DateTime>();
@@ -30,6 +31,7 @@ namespace BE
             }
             return retVal;
         }
+
         private String printDateTime(List<DateTime> dateTimes)
         {
             string retVal="";
@@ -39,7 +41,6 @@ namespace BE
             }
             return retVal;
         }
-
 
         /// <summary>
         /// The function receives date and days of vacation, and returns if the unit is available.
