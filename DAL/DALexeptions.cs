@@ -4,9 +4,9 @@ using System.Text;
 namespace DAL
 {
 
-    public class dalExeptionIdAlreadyexist : Exception
+    public class dalExeptionIDalreadyExist : Exception
     {
-        public dalExeptionIdAlreadyexist() { }
+        public dalExeptionIDalreadyExist() { }
 
     }
     public class dalExeptionItemDoesntexist:Exception

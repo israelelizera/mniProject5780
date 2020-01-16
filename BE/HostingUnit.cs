@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BE
 {
@@ -9,7 +8,6 @@ namespace BE
     /// </summary>
     public class HostingUnit
     {
-        public Host Owner;
         public string HostingUnitName;
         public bool[,] Diary = new bool[12, 31];
         public int hostinUnitkey = Configuration.getHostingUnitKeyTempPlusOne();
@@ -23,8 +21,7 @@ namespace BE
         public bool ChildrensAttractions;
 
         public override string ToString() 
-        { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
-                "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
+        { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
                 "location: " + location + "\n") ; }
 
         private List< DateTime> printDiary()
@@ -80,8 +77,7 @@ namespace BE
 
         public virtual bool Equals(HostingUnit hostingUnit)
         {
-            return (hostinUnitkey == hostingUnit.hostinUnitkey &&
-             Owner == hostingUnit.Owner &&
+            return (hostinUnitkey == hostingUnit.hostinUnitkey &&            
              HostingUnitName == hostingUnit.HostingUnitName &&
              Diary == hostingUnit.Diary);
         }

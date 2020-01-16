@@ -35,13 +35,11 @@ namespace PLWPF
 
             try
             {
-                
-
                 HostingUnit.HostingUnitName = HostingUnitName.Text;
                 HostingUnit.location = (BE.Location)Location.SelectedIndex;
                 HostingUnit.Type = (BE.KindOfUnit)KindOfUnit.SelectedIndex;
                 HostingUnit.capacity = int.Parse(capacity.Text);
-                HostingUnit.Pool = (bool) pool.IsChecked;
+                HostingUnit.Pool = (bool)pool.IsChecked;
                 HostingUnit.ChildrensAttractions = (bool)ChildrensAttractions.IsChecked;
                 HostingUnit.Garden = (bool)Garden.IsChecked;
                 HostingUnit.Jacuzzi = (bool)Jacuzzi.IsChecked;
@@ -56,15 +54,15 @@ namespace PLWPF
                 MessageBox.Show("check your input and try again");
                 success = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 success = false;
             }
 
-            if(success)
+            if (success)
             {
-                MessageBox.Show("The addition was successful");
+                MessageBox.Show("The addition was successful!");
                 Close();
             }
 
@@ -72,7 +70,9 @@ namespace PLWPF
 
         private void cancel(object sender, RoutedEventArgs e)
         {
-            Close();           
+            HostingUnit = new BE.HostingUnit();
+            HostingUnitName.ClearValue(TextBox.TextProperty);
+            Close();
         }
     }
 }

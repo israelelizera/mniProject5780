@@ -9,7 +9,7 @@
 
     <Grid x:Name="grid" HorizontalAlignment="Center" Width="800" Margin="-4,0,-4,-53">
 
-        <TextBlock Text="Add hosting unit" FontSize="36" Margin="1,1,219,361"/>
+        <TextBlock Text="Add hosting unit" FontSize="36" Margin="22,1,499,418"/>
 
         <TextBlock Text="hosting unit name:" Margin="40,80,615,341" FontSize="16" Height="30"/>
         <TextBlock Text="choose Location:" Margin="40,121,615,300" FontSize="16" Height="30"/>

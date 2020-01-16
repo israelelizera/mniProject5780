@@ -175,7 +175,6 @@ namespace PL
             //-----------------------hostingUnits---------------------------
            
             HostingUnit hostingUnit1 = new HostingUnit();
-            hostingUnit1.Owner = Host1;
             hostingUnit1.HostingUnitName = "zimer1";
             hostingUnit1.Diary = Diary1;
             hostingUnit1.location = Location.North;
@@ -183,7 +182,6 @@ namespace PL
             bL.addHostingUnit(hostingUnit1);
 
             HostingUnit hostingUnit2 = new HostingUnit();
-            hostingUnit2.Owner = Host1;
             hostingUnit2.HostingUnitName = "zimer2";
             hostingUnit2.Diary = Diary2;
             hostingUnit2.location = Location.North;
@@ -191,7 +189,6 @@ namespace PL
             bL.addHostingUnit(hostingUnit2);
 
             HostingUnit hostingUnit3 = new HostingUnit();
-            hostingUnit3.Owner = Host2;
             hostingUnit3.HostingUnitName = "hotel1";
             hostingUnit3.Diary = Diary3;
             hostingUnit3.location = Location.Center;
@@ -199,7 +196,6 @@ namespace PL
             bL.addHostingUnit(hostingUnit3);
 
             HostingUnit hostingUnit4 = new HostingUnit();
-            hostingUnit4.Owner = Host2;
             hostingUnit4.HostingUnitName = "hotel2";
             hostingUnit4.Diary = Diary4;
             hostingUnit4.location = Location.Center;
