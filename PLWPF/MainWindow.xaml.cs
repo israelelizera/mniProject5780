@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using BL;
+﻿using System.Windows;
 
 namespace PLWPF
 {
@@ -26,13 +12,13 @@ namespace PLWPF
             InitializeComponent();           
         }
 
-        private void host(object sender, RoutedEventArgs e)
+        private void Host(object sender, RoutedEventArgs e)
         {
             new Host().Show();
             Close();
         }
 
-        private void cancel(object sender, RoutedEventArgs e)
+        private void Cancel(object sender, RoutedEventArgs e)
         {
             Close();
         }

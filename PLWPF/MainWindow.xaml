@@ -8,11 +8,12 @@
         Title="MainWindow" Width="450" Height="550">
 
     <Grid Width="450" Height="550">
-        <TextBlock x:Name="welcome" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" TextAlignment="Center" Margin="0" Width="244" Text="Welcome!" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="welcome" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" TextAlignment="Center" Margin="103,20,103,0" Width="244" Text="Welcome!" HorizontalAlignment="Center"/>
 
-        <Button x:Name="host" Content="host" Margin="0,94,0,325" FontSize="36" Click="host" Width="400" Height="100"/>
-        <Button Content="I'm looking for a vacation" Margin="0,224,0,180" FontSize="35" Click="cancel" Height="115" Width="400"/>
-        <Button x:Name="cancel" Content="cancel" Margin="25,360,25,76" FontSize="36" Click="cancel" Height="115" Width="400"/>
+        <Button x:Name="host" Content="host" Margin="0,94,0,325" FontSize="36" Click="Host" Width="400" Height="100"/>
+        <Button x:Name="guest_request" Content="I'm looking for a vacation" Margin="25,214,25,220" FontSize="35" Height="115" Width="400"/>
+        <Button x:Name="cancel" Content="cancel" Margin="25,334,25,100" FontSize="36" Click="Cancel" Height="115" Width="400"/>
+        
     </Grid>
 
 </Window>

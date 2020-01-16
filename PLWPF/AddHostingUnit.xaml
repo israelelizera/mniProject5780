@@ -11,17 +11,17 @@
 
         <TextBlock Text="Add hosting unit" FontSize="36" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <TextBlock Text="hosting unit name:" Margin="5,80,0,0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="25"/>
-        <TextBlock Text="choose Location:" Margin="7,113,313,380" FontSize="16" Width="130" Height="25"/>
-        <TextBlock Text="choose type:" Margin="10,147,313,341" FontSize="16" Height="30"/>
-        <TextBlock Text="capacity:" Margin="5,177,0,316" FontSize="16" Height="25" Width="130" HorizontalAlignment="Left"/>
+        <TextBlock Text="hosting unit name:" Margin="20,80,0,0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="25"/>
+        <TextBlock Text="choose Location:" Margin="20,113,0,380" FontSize="16" Width="130" Height="25" HorizontalAlignment="Left"/>
+        <TextBlock Text="choose type:" Margin="20,147,0,341" FontSize="16" Height="30" HorizontalAlignment="Left"/>
+        <TextBlock Text="capacity:" Margin="20,177,0,316" FontSize="16" Height="25" Width="130" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        <TextBox x:Name="HostingUnitName" Margin="220,80,100,413" Width="130" Height="25"/>
+        <TextBox x:Name="HostingUnitName" Margin="100,80,0,413" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="80" Margin="92,0,278,90" Click="Button_Click" Height="35"/>
         <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="278,393,0,0" Click="cancel" Height="35"/>
 
-        <ComboBox x:Name="Location" Margin="218,114,102,379" Width="130" Height="25">
+        <ComboBox x:Name="Location" Margin="100,114,0,379" Width="130" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center">
             <ComboBoxItem IsSelected="True" Content="All" />
             <ComboBoxItem Content="North" />
             <ComboBoxItem Content="South" />
@@ -29,7 +29,7 @@
             <ComboBoxItem Content="Jerusalem" />
         </ComboBox>
 
-        <ComboBox x:Name="KindOfUnit" Margin="218,148,102,345" Width="130" Height="25">
+        <ComboBox x:Name="KindOfUnit" Margin="100,148,0,345" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
             <ComboBoxItem IsSelected="True" Content="GuesRoom" />
             <ComboBoxItem Content="Apartment" />
             <ComboBoxItem Content="HotelRoom" />
@@ -37,12 +37,12 @@
             <ComboBoxItem Content="hut" />
         </ComboBox>
 
-        <TextBox x:Name="capacity" Margin="218,178,102,315" Width="130" Height="25"/>
+        <TextBox x:Name="capacity" Margin="100,178,0,315" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <CheckBox x:Name="pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,214,0,0" FontSize="16"/>
-        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,289,0,0" FontSize="16"/>
-        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,264,0,0" FontSize="16"/>
-        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,239,0,0" FontSize="16" />
+        <CheckBox x:Name="pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,214,0,0" FontSize="16"/>
+        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,289,0,0" FontSize="16"/>
+        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,264,0,0" FontSize="16"/>
+        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,239,0,0" FontSize="16" />
 
     </Grid>
 </Window>
