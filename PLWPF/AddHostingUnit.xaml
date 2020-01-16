@@ -5,43 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="AddHostingUnit" Height="450" Width="800">
+        Title="AddHostingUnit" Height="550" Width="450">
 
-    <Grid x:Name="grid" HorizontalAlignment="Center" Width="800" Margin="-4,0,-4,-53">
+    <Grid x:Name="grid" HorizontalAlignment="Center" Width="450" Margin="-4,0" Height="518" VerticalAlignment="Top">
 
-        <TextBlock Text="Add hosting unit" FontSize="36" Margin="22,1,499,418"/>
+        <TextBlock Text="Add hosting unit" FontSize="36" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-        <TextBlock Text="hosting unit name:" Margin="40,80,615,341" FontSize="16" Height="30"/>
-        <TextBlock Text="choose Location:" Margin="40,121,615,300" FontSize="16" Height="30"/>
-        <TextBlock Text="choose type:" Margin="40,164,615,260" FontSize="16" Height="30"/>
-        <TextBlock Text="capacity:" Margin="40,215,615,200" FontSize="16" Height="30"/>
+        <TextBlock Text="hosting unit name:" Margin="5,80,0,0" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="25"/>
+        <TextBlock Text="choose Location:" Margin="7,113,313,380" FontSize="16" Width="130" Height="25"/>
+        <TextBlock Text="choose type:" Margin="10,147,313,341" FontSize="16" Height="30"/>
+        <TextBlock Text="capacity:" Margin="5,177,0,316" FontSize="16" Height="25" Width="130" HorizontalAlignment="Left"/>
 
-        <TextBox x:Name="HostingUnitName" Margin="200,80,422,340" Width="150" Height="30"/>
+        <TextBox x:Name="HostingUnitName" Margin="220,80,100,413" Width="130" Height="25"/>
 
-        <StackPanel Margin="200,164,422,255"/>
+        <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="80" Margin="92,0,278,90" Click="Button_Click" Height="35"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="278,393,0,0" Click="cancel" Height="35"/>
 
-        <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Margin="660,370,50,0" Click="Button_Click" Height="35"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="559,370,50,0" Click="cancel" Height="35"/>
-        <ComboBox x:Name="Location" Margin="200,121,422,302" Width="150" Height="30">
+        <ComboBox x:Name="Location" Margin="218,114,102,379" Width="130" Height="25">
             <ComboBoxItem IsSelected="True" Content="All" />
             <ComboBoxItem Content="North" />
             <ComboBoxItem Content="South" />
             <ComboBoxItem Content="Center" />
             <ComboBoxItem Content="Jerusalem" />
         </ComboBox>
-        <ComboBox x:Name="KindOfUnit" Margin="200,164,425,255" Width="150" Height="30">
+
+        <ComboBox x:Name="KindOfUnit" Margin="218,148,102,345" Width="130" Height="25">
             <ComboBoxItem IsSelected="True" Content="GuesRoom" />
             <ComboBoxItem Content="Apartment" />
             <ComboBoxItem Content="HotelRoom" />
             <ComboBoxItem Content="Tent" />
             <ComboBoxItem Content="hut" />
         </ComboBox>
-        <TextBox x:Name="capacity" Margin="200,215,422,200" Width="150" Height="30"/>
-        
-        <CheckBox x:Name="pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,281,0,0" FontSize="16"/>
-        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,351,0,0" FontSize="16"/>
-        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,331,0,0" FontSize="16"/>
-        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,306,0,0" FontSize="16" />
+
+        <TextBox x:Name="capacity" Margin="218,178,102,315" Width="130" Height="25"/>
+
+        <CheckBox x:Name="pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,214,0,0" FontSize="16"/>
+        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,289,0,0" FontSize="16"/>
+        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,264,0,0" FontSize="16"/>
+        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,239,0,0" FontSize="16" />
 
     </Grid>
 </Window>

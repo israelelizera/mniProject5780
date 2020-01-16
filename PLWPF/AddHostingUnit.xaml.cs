@@ -63,6 +63,7 @@ namespace PLWPF
             if (success)
             {
                 MessageBox.Show("The addition was successful!");
+                new Host().Show();
                 Close();
             }
 
@@ -72,6 +73,7 @@ namespace PLWPF
         {
             HostingUnit = new BE.HostingUnit();
             HostingUnitName.ClearValue(TextBox.TextProperty);
+            new Host().Show();
             Close();
         }
     }

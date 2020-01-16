@@ -10,30 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BL;
 
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Host.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Host : Window
     {
-        public MainWindow()
+        public Host()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
-        private void host(object sender, RoutedEventArgs e)
+        private void Add_hosting_unit_Click(object sender, RoutedEventArgs e)
         {
-            new Host().Show();
+            new AddHostingUnit().Show();
             Close();
         }
 
-        private void cancel(object sender, RoutedEventArgs e)
+        private void cencel_Click(object sender, RoutedEventArgs e)
         {
+            new MainWindow().Show();
             Close();
         }
     }

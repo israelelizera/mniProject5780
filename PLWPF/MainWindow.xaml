@@ -5,20 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Width="808.609">
-    
-    <Grid Margin="0,0,2,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        
-        <TextBlock HorizontalAlignment="Center" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" TextAlignment="Center" Margin="126,22,131,0"><Run Text="Welcome to the vacati"/><InlineUIContainer>
-            
-        </InlineUIContainer><Run Text="on find site!"/></TextBlock>
-        <Button Content="I'm a host" Margin="96,101,98,60" Grid.Row="1" FontSize="36" Click="Button_Click"/>
-        <Button Content="I'm looking for a vacation" Margin="96,291,98,55" FontSize="36" Click="Button_Click_1"/>
+        Title="MainWindow" Width="450" Height="550">
+
+    <Grid Width="450" Height="550">
+        <TextBlock x:Name="welcome" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" TextAlignment="Center" Margin="0" Width="244" Text="Welcome!" HorizontalAlignment="Center"/>
+
+        <Button x:Name="host" Content="host" Margin="0,94,0,325" FontSize="36" Click="host" Width="400" Height="100"/>
+        <Button Content="I'm looking for a vacation" Margin="0,224,0,180" FontSize="35" Click="cancel" Height="115" Width="400"/>
+        <Button x:Name="cancel" Content="cancel" Margin="25,360,25,76" FontSize="36" Click="cancel" Height="115" Width="400"/>
     </Grid>
 
 </Window>
