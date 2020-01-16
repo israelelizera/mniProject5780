@@ -29,7 +29,7 @@ namespace PLWPF
             this.GuestRequestDetails.DataContext = guestRequest;
             bL = new BL.BL_imp();
             PrivateNameBox.Text = string.Format(PrivateNameBox.Text);
-            FamilyNameBox.Text = string.Format(FamilyNameBox.Text);
+            //FamilyNameBox.Text = string.Format(FamilyNameBox.Text);
             LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
             TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
             PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
@@ -38,8 +38,6 @@ namespace PLWPF
             ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
             EntryDatePicker.SelectedDate =Convert.ToDateTime(EntryDatePicker.SelectedDate);
             ReleaseDatePicker.SelectedDate = Convert.ToDateTime(ReleaseDatePicker.SelectedDate);
-            AdultsBox.SelectedItem = int.Parse(AdultsBox.SelectedItem.ToString());
-            ChildrenBox.SelectedItem = int.Parse(ChildrenBox.SelectedItem.ToString());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -52,16 +50,10 @@ namespace PLWPF
             }
             catch(Exception ex)
             {
-                throw ex;
+                    throw ex;
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
 
-            System.Windows.Data.CollectionViewSource guestRequestViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("guestRequestViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // guestRequestViewSource.Source = [generic data source]
-        }
     }
 }

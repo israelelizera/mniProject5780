@@ -12,6 +12,11 @@ namespace BE
     {
         public int GuestRequestKey = Configuration.getGuestRequestKeyTempPlusOne();
         public string PrivateName;
+       /* public string PrivateName
+        {
+            get { return privateName; }
+            set { privateName = value; }
+        }*/
         public string FamilyName;
         public string MailAddress;
 
