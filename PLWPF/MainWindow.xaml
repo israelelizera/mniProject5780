@@ -5,5 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Width="808.609">
+    
+    <Grid Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock HorizontalAlignment="Center" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" TextAlignment="Center" Margin="126,22,131,0"><Run Text="Welcome to the vacati"/><InlineUIContainer>
+            
+        </InlineUIContainer><Run Text="on find site!"/></TextBlock>
+        <Button Content="I'm a host" Margin="96,101,98,60" Grid.Row="1" FontSize="36" Click="Button_Click"/>
+        <Button Content="I'm looking for a vacation" Margin="96,291,98,55" FontSize="36" Click="Button_Click_1"/>
+    </Grid>
+
 </Window>

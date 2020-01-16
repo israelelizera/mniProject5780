@@ -23,8 +23,18 @@ namespace PLWPF
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             new AddHostingUnit().Show();
+            Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new AddGuestRequest().Show();
             Close();
         }
     }
