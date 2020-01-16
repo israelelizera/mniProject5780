@@ -28,12 +28,18 @@ namespace PLWPF
             guestRequest = new GuestRequest();
             this.GuestRequestDetails.DataContext = guestRequest;
             bL = new BL.BL_imp();
-            this.LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
-            this.TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
-            this.PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            PrivateNameBox.Text = string.Format(PrivateNameBox.Text);
+            FamilyNameBox.Text = string.Format(FamilyNameBox.Text);
+            LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
+            TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
+            PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            EntryDatePicker.SelectedDate =Convert.ToDateTime(EntryDatePicker.SelectedDate);
+            ReleaseDatePicker.SelectedDate = Convert.ToDateTime(ReleaseDatePicker.SelectedDate);
+            AdultsBox.SelectedItem = int.Parse(AdultsBox.SelectedItem.ToString());
+            ChildrenBox.SelectedItem = int.Parse(ChildrenBox.SelectedItem.ToString());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

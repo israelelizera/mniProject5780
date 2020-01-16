@@ -17,11 +17,8 @@
         <TextBlock x:Name="Mail" HorizontalAlignment="Left" Margin="61,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Mail:"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="14" Margin="199,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding PrivateName}" />
         <TextBox x:Name="MailBox" HorizontalAlignment="Left" Height="14" Margin="199,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding MailAddress}"/>
-        <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="14" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding FAmilyName}" />
+        <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="14" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding FamilyName}" />
         <Button x:Name="button1" Content="Add&#xA;" HorizontalAlignment="Left" Margin="691,359,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Height="31" FontWeight="Bold" FontStyle="Italic" Click="button1_Click"/>
-        <TextBlock x:Name="EntryDate" HorizontalAlignment="Left" Margin="61,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Dates:"/>
-        <Calendar HorizontalAlignment="Left" Margin="147,250,0,-1" VerticalAlignment="Top" Height="170" Width="177"
-                  DisplayDateStart="{Binding EntryDate}" DisplayDateEnd="{Binding ReleaseDate}"/>
         <TextBlock x:Name="Location" HorizontalAlignment="Left" Margin="392,158,0,0" TextWrapping="Wrap" Text="Location:" VerticalAlignment="Top" RenderTransformOrigin="0.229,1.812"/>
         <TextBlock x:Name="Type" HorizontalAlignment="Left" Margin="392,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" RenderTransformOrigin="0.444,0.964"><Run Text="Type:"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="Pool" HorizontalAlignment="Left" Margin="392,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16"><Run Text="Pool:"/><LineBreak/><Run/></TextBlock>
@@ -39,12 +36,8 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Adults:" Grid.Column="0" HorizontalAlignment="Left" Margin="-135,1,0,5" Grid.Row="0" VerticalAlignment="Center"/>
-            <ComboBox x:Name="adultsComboBox" Grid.Column="1" DisplayMemberPath="Adults" HorizontalAlignment="Left" Height="26" ItemsSource="{Binding}" Margin="-70,1,0,5" Grid.Row="0" VerticalAlignment="Center" Width="110" Text="{Binding Adults}">
-                <ComboBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel/>
-                    </ItemsPanelTemplate>
-                </ComboBox.ItemsPanel>
+            <ComboBox x:Name="AdultsBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" SelectedItem="{Binding Adults}"  Margin="-70,1,0,5" Grid.Row="0" VerticalAlignment="Center" Width="110" Text="{Binding Adults}">
+                
             </ComboBox>
         </Grid>
         <Grid x:Name="grid2" DataContext="{StaticResource guestRequestViewSource}" HorizontalAlignment="Left" Margin="413,114,0,0" VerticalAlignment="Top">
@@ -56,7 +49,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Children:" Grid.Column="0" HorizontalAlignment="Left" Margin="-17,14,0,-8" Grid.Row="0" VerticalAlignment="Center"/>
-            <ComboBox x:Name="childrenComboBox" Grid.Column="1" DisplayMemberPath="Children" HorizontalAlignment="Left" Height="19" ItemsSource="{Binding}" Margin="0,17,-44,-4" Grid.Row="0" VerticalAlignment="Center" Width="109" RenderTransformOrigin="0.5,0.5" Text="{Binding Children}">
+            <ComboBox x:Name="ChildrenBox" Grid.Column="1" DisplayMemberPath="Children" HorizontalAlignment="Left" Height="19" ItemsSource="{Binding}" Margin="0,17,-44,-4" Grid.Row="0" VerticalAlignment="Center" Width="109" RenderTransformOrigin="0.5,0.5" Text="{Binding Children}">
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -78,6 +71,10 @@
         <ComboBox x:Name="JacuzziBox" HorizontalAlignment="Left" Margin="458,271,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Jacuzzi}"  />
         <ComboBox x:Name="GardenBox" HorizontalAlignment="Left" Margin="458,320,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Garden}"  />
         <ComboBox x:Name="ChildrenAttractionBox" HorizontalAlignment="Left" Margin="555,371,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding ChildrensAttractions}"  />
+        <TextBlock x:Name="EntryDate" HorizontalAlignment="Left" Margin="61,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Entry Date:"/>
+        <DatePicker x:Name="EntryDatePicker" HorizontalAlignment="Left" Margin="154,267,0,0" VerticalAlignment="Top" SelectedDate="{Binding EntryDate}" />
+        <TextBlock x:Name="ReleaseDate" HorizontalAlignment="Left" Margin="61,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Leaving Date:"/><LineBreak/><Run/></TextBlock>
+        <DatePicker x:Name="ReleaseDatePicker" HorizontalAlignment="Left" Margin="154,329,0,0" VerticalAlignment="Top" SelectedDate="{Binding ReleaseDate}"/>
 
 
 
