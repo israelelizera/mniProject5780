@@ -70,6 +70,11 @@ namespace BL
             public GuestRequestDoesntExistException() { }
         }
 
+        public class InvalidCapacityException : Exception
+        {
+            public InvalidCapacityException() { }
+        }
+
         public static bool IsValidEmail(string email)
         {
             try

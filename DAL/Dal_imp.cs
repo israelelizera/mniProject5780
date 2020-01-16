@@ -1,9 +1,7 @@
-﻿using System;
+﻿using BE;
+using DS;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using BE;
-using DS;
 
 namespace DAL
 {
@@ -18,7 +16,7 @@ namespace DAL
                             where guestRequest.GuestRequestKey == guest.GuestRequestKey
                             select guest;
                 if (match.Count() > 0)
-                    throw new dalExeptionIdAlreadyexist();
+                    throw new dalExeptionIDalreadyExist();
                 else
                     DataSource.guestRequests.Add(Cloning.Clon(guestRequest));
             }
@@ -69,25 +67,20 @@ namespace DAL
         {
             if (DataSource.hostingUnits != null)
             {
-                var match = from hostU in DS.DataSource.hostingUnits
-                            let equal = hostU.hostinUnitkey == hostingUnit.hostinUnitkey
-                            where equal
-                            select hostU;
-                if (match.Count() > 0)
-                    throw new dalExeptionIdAlreadyexist();
-                else
-                {
-                    DS.DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
-                }
+                if (DataSource.hostingUnits.Exists(host => host.hostinUnitkey == hostingUnit.hostinUnitkey))
+                    throw new dalExeptionIDalreadyExist();
+
+                DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
             }
+
             else
             {
                 DataSource.hostingUnits = new List<HostingUnit>();
                 DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
             }
-
         }
-        public void updateHostingUnit(int hostingUnitKey, bool [,] diary)
+
+        public void updateHostingUnit(int hostingUnitKey, bool[,] diary)
         {
             var match = from hostU in DS.DataSource.hostingUnits
                         where hostingUnitKey == hostU.hostinUnitkey
@@ -96,7 +89,7 @@ namespace DAL
                 throw new dalExeptionItemDoesntexist();
             else if (match.Count() > 1)
                 throw new dalExeptionMoreThanOneAnswer();
-            match.ToList().RemoveAll(hostU  => hostingUnitKey == hostU.hostinUnitkey);
+            match.ToList().RemoveAll(hostU => hostingUnitKey == hostU.hostinUnitkey);
             match.ToList()[0].Diary = diary;
             HostingUnit matchHosting = new HostingUnit();
             matchHosting = match.ToList()[0];
@@ -128,7 +121,7 @@ namespace DAL
                             where equal
                             select anOrder;
                 if (match.Count() > 0)
-                    throw new dalExeptionIdAlreadyexist();
+                    throw new dalExeptionIDalreadyExist();
                 else
                 {
                     DataSource.orders.Add(Cloning.Clon(order));
@@ -140,7 +133,7 @@ namespace DAL
                 DataSource.orders.Add(Cloning.Clon(order));
             }
         }
-        public void updateOrder(int orderKey, StatusOrder status )
+        public void updateOrder(int orderKey, StatusOrder status)
         {
 
             var match = from anOrder in DataSource.orders
@@ -150,14 +143,14 @@ namespace DAL
                 throw new dalExeptionItemDoesntexist();
             else if (match.Count() > 1)
                 throw new dalExeptionMoreThanOneAnswer();
-            match.ToList().RemoveAll(anOrder => anOrder.OrderKey  == orderKey);
+            match.ToList().RemoveAll(anOrder => anOrder.OrderKey == orderKey);
             match.ToList()[0].status = status;
             Order matchOrder = new Order();
             matchOrder = match.ToList()[0];
             DataSource.orders.RemoveAll(anOrder => anOrder.OrderKey == orderKey);
             DataSource.orders.Add(matchOrder);
         }
-       public void updateOrder(Order order, Order orderUpdate)
+        public void updateOrder(Order order, Order orderUpdate)
         {
             updateOrder(order.HostingUnitKey, orderUpdate.status);
         }

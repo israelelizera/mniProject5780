@@ -15,7 +15,7 @@ namespace BL
 
         //-----------------------HostingUnit--------------------------------
         void addHostingUnit(HostingUnit hostingUnit);
-        void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate);
+        void updateHostingUnit(HostingUnit hostingUnit);
         void deleteHostingUnit(HostingUnit hostingUnit);
 
         //-----------------------Order--------------------------------

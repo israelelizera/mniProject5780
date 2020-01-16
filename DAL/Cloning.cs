@@ -36,7 +36,7 @@ namespace DAL
         public static List<GuestRequest> Clon(this List<GuestRequest> guestRequest)
         {
             int counter = 0;
-            List<GuestRequest> retVal=new List<GuestRequest>();
+            List<GuestRequest> retVal = new List<GuestRequest>();
             foreach (var item in guestRequest)
             {
                 retVal.Add(Cloning.Clon(guestRequest[counter]));
@@ -71,15 +71,20 @@ namespace DAL
 
             return retVal;
         }
+
         public static HostingUnit Clon(this HostingUnit hostingUnit)
         {
             return new HostingUnit()
             {
-                hostinUnitkey = hostingUnit.hostinUnitkey,
-                Owner = hostingUnit.Owner,
+                hostinUnitkey = hostingUnit.hostinUnitkey,              
                 HostingUnitName = hostingUnit.HostingUnitName,
                 Diary = hostingUnit.Diary,
-                location = hostingUnit.location
+                location = hostingUnit.location,
+                capacity = hostingUnit.capacity,
+                Pool = hostingUnit.Pool,
+                Jacuzzi = hostingUnit.Jacuzzi,
+                Garden = hostingUnit.Garden,
+                ChildrensAttractions = hostingUnit.ChildrensAttractions
             };
         }
         public static List<HostingUnit> Clon(this List<HostingUnit> hostingUnit)

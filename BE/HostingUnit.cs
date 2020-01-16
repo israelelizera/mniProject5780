@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BE
 {
@@ -9,16 +8,22 @@ namespace BE
     /// </summary>
     public class HostingUnit
     {
-        public Host Owner;
         public string HostingUnitName;
         public bool[,] Diary = new bool[12, 31];
         public int hostinUnitkey = Configuration.getHostingUnitKeyTempPlusOne();
         public Location location;
+        public KindOfUnit Type;
+        public int capacity;
+
+        public bool Pool;
+        public bool Jacuzzi;
+        public bool Garden;
+        public bool ChildrensAttractions;
 
         public override string ToString() 
-        { return ("Owner: " + Owner.PrivateName + " " + Owner.FamilyName + "\n" + 
-                "HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
+        { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
                 "location: " + location + "\n") ; }
+
         private List< DateTime> printDiary()
         {
             List<DateTime> retVal=new List<DateTime>();
@@ -30,6 +35,7 @@ namespace BE
             }
             return retVal;
         }
+
         private String printDateTime(List<DateTime> dateTimes)
         {
             string retVal="";
@@ -39,7 +45,6 @@ namespace BE
             }
             return retVal;
         }
-
 
         /// <summary>
         /// The function receives date and days of vacation, and returns if the unit is available.
@@ -72,8 +77,7 @@ namespace BE
 
         public virtual bool Equals(HostingUnit hostingUnit)
         {
-            return (hostinUnitkey == hostingUnit.hostinUnitkey &&
-             Owner == hostingUnit.Owner &&
+            return (hostinUnitkey == hostingUnit.hostinUnitkey &&            
              HostingUnitName == hostingUnit.HostingUnitName &&
              Diary == hostingUnit.Diary);
         }

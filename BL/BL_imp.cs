@@ -6,7 +6,7 @@ using DAL;
 
 namespace BL
 {
-   public class BL_imp : IBL
+    public class BL_imp : IBL
     {
         IDAL dal = FactoryDal.getDal();
 
@@ -58,7 +58,7 @@ namespace BL
 
             try
             {
-                dal.updateGuestRequest(guestRequest, guestRequestUpdate);
+                dal.updateGuestRequest(guestRequest, guestRequest);
             }
             catch (Exception e)
             {
@@ -84,8 +84,8 @@ namespace BL
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
                 throw new BLexception.InvalidHostingUnitNameException();
 
-            if (hostingUnit.Diary == null)
-                throw new BLexception.DiaryIsNullException();
+            if (hostingUnit.capacity <= 0)
+                throw new BLexception.InvalidCapacityException();
 
             try
             {
@@ -96,24 +96,24 @@ namespace BL
                 throw e;
             }
         }
-        public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
+        public void updateHostingUnit(HostingUnit hostingUnit)
         {
             //Logical Enforcement
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
                 throw new BLexception.InvalidHostingUnitNameException();
 
-            if (hostingUnit.Diary == null)
-                throw new BLexception.DiaryIsNullException();
-
+            if (hostingUnit.capacity <= 0)
+                throw new BLexception.InvalidCapacityException();
             try
             {
-                dal.updateHostingUnit(hostingUnit, hostingUnitUpdate);
+                dal.updateHostingUnit(hostingUnit);
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
+
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
             //Checks if there is an open invitation for this hosting unit
@@ -205,7 +205,7 @@ namespace BL
                        where unit.AvailableOnDate(dateTime, day)
                        select unit;
 
-               return list.ToList();
+            return list.ToList();
         }
 
         public int daysBetween(DateTime date1, DateTime date2)
@@ -290,7 +290,7 @@ namespace BL
 
         public HostingUnit GetHostingUnitByKey(int key)
         {
-                var varHostingUnit = from hostingUnit in getHostingUnits()
+            var varHostingUnit = from hostingUnit in getHostingUnits()
                                  where hostingUnit.hostinUnitkey == key
                                  select hostingUnit;
 
