@@ -18,14 +18,14 @@ namespace PLWPF
             Close();
         }
 
-        private void Cancel(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
         private void guest_request_Click(object sender, RoutedEventArgs e)
         {
             new Guest().Show();
+            Close();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }
