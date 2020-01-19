@@ -9,7 +9,7 @@
 
     <Grid x:Name="GuestRequestDetails">
 
-        <TextBlock x:Name="textBlock"  Margin="244,19,0,0" TextWrapping="Wrap" Text="Add guest request" VerticalAlignment="Top" Width="301" Height="50" FontSize="36"/>
+        <TextBlock x:Name="textBlock"  Margin="254,10,237,0" TextWrapping="Wrap" Text="Add guest request" VerticalAlignment="Top" Width="301" Height="50" FontSize="36"/>
         <TextBlock x:Name="PrivateName" HorizontalAlignment="Left" Margin="61,97,0,0" TextWrapping="Wrap" Text="Private name:" VerticalAlignment="Top"/>
         <TextBlock x:Name="FamilyName" HorizontalAlignment="Left" Margin="61,128,0,0" TextWrapping="Wrap" Text="Family Name:"  VerticalAlignment="Top" Height="20"/>
         <TextBlock x:Name="Mail" HorizontalAlignment="Left" Margin="61,158,0,0" TextWrapping="Wrap" Text="Mail:" VerticalAlignment="Top" Height="22" />
@@ -28,7 +28,7 @@
         <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="19" Margin="177,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding FamilyName}"   />
         <TextBox x:Name="MailBox" HorizontalAlignment="Left" Height="22" Margin="177,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding MailAddress}"/>
         <TextBox x:Name="AdultsBox" HorizontalAlignment="Left" Height="23" Margin="458,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Adults}"/>
-        <TextBox x:Name="ChildrenBox" HorizontalAlignment="Left" Height="23" Margin="458,125,0,0" TextWrapping="Wrap" Text="{Binding Children}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ChildrenBox" HorizontalAlignment="Left" Height="23" Margin="458,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Children}"/>
 
         <ComboBox x:Name="LocationBox" HorizontalAlignment="Left" Margin="458,158,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Location}"  />
         <ComboBox x:Name="TypeBox" HorizontalAlignment="Left" Margin="458,185,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Type}"  />

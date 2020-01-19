@@ -14,7 +14,7 @@ namespace BL
         public void addGuestRequest(GuestRequest guestRequest)
         {
             //Logical Enforcement
-               if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.EntryDate > DateTime.Now)
+            if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.ReleaseDate < DateTime.Now)
                 throw new BLexception.InvalidDatesException();
 
             if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
@@ -41,7 +41,7 @@ namespace BL
         public void updateGuestRequest(GuestRequest guestRequest, GuestRequest guestRequestUpdate)
         {
             //Logical Enforcement
-            if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.EntryDate > DateTime.Now)
+            if (guestRequest.ReleaseDate <= guestRequest.EntryDate || guestRequest.ReleaseDate < DateTime.Now)
                 throw new BLexception.InvalidDatesException();
 
             if (guestRequest.PrivateName == "" || guestRequest.PrivateName == null)
