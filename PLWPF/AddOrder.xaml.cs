@@ -40,5 +40,11 @@ namespace PLWPF
             BL.addOrder(order);
             Close();
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            new Host().Show();
+            Close();
+        }
     }
 }
