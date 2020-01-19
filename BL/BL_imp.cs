@@ -118,7 +118,7 @@ namespace BL
         {
             //Checks if there is an open invitation for this hosting unit
             var hostingUnitOreder = from order in GetOrders()
-                                    where (order.HostingUnitKey == hostingUnit.hostinUnitkey) &&
+                                    where (order.HostingUnitKey == hostingUnit.hostinUnitKey) &&
                                             (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
                                     select order;
 
@@ -253,7 +253,7 @@ namespace BL
         public int OrdersSentOrClosed(HostingUnit hostingUnit)
         {
             var list = from order in GetOrders()
-                       where order.HostingUnitKey == hostingUnit.hostinUnitkey
+                       where order.HostingUnitKey == hostingUnit.hostinUnitKey
                        select order;
 
             return list.ToList().Count;
@@ -291,7 +291,7 @@ namespace BL
         public HostingUnit GetHostingUnitByKey(int key)
         {
             var varHostingUnit = from hostingUnit in getHostingUnits()
-                                 where hostingUnit.hostinUnitkey == key
+                                 where hostingUnit.hostinUnitKey == key
                                  select hostingUnit;
 
             if (!varHostingUnit.Any())

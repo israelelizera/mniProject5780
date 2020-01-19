@@ -10,7 +10,7 @@ namespace BE
     {
         public string HostingUnitName;
         public bool[,] Diary = new bool[12, 31];
-        public int hostinUnitkey = Configuration.getHostingUnitKeyTempPlusOne();
+        public int hostinUnitKey = Configuration.getHostingUnitKeyTempPlusOne();
         public Location location;
         public KindOfUnit Type;
         public int capacity;
@@ -21,7 +21,7 @@ namespace BE
         public bool ChildrensAttractions;
 
         public override string ToString() 
-        { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitkey +"\n"+
+        { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitKey +"\n"+
                 "location: " + location + "\n") ; }
 
         private List< DateTime> printDiary()
@@ -77,7 +77,7 @@ namespace BE
 
         public virtual bool Equals(HostingUnit hostingUnit)
         {
-            return (hostinUnitkey == hostingUnit.hostinUnitkey &&            
+            return (hostinUnitKey == hostingUnit.hostinUnitKey &&            
              HostingUnitName == hostingUnit.HostingUnitName &&
              Diary == hostingUnit.Diary);
         }

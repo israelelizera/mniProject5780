@@ -11,12 +11,8 @@ namespace BE
     public class GuestRequest
     {
         public int GuestRequestKey = Configuration.getGuestRequestKeyTempPlusOne();
+
         public string PrivateName;
-       /* public string PrivateName
-        {
-            get { return privateName; }
-            set { privateName = value; }
-        }*/
         public string FamilyName;
         public string MailAddress;
         public StatusOrder status;
@@ -32,6 +28,7 @@ namespace BE
         public Request Jacuzzi;
         public Request Garden;
         public Request ChildrensAttractions;
+
         public override string ToString()
         {
             return ("GuestRequestKey: " + GuestRequestKey + "\n" + "PrivateName :" + PrivateName + "\n"
@@ -40,6 +37,8 @@ namespace BE
                 + ReleaseDate + "\n" + "location: " + location + "\n" + "SubLocation: " + SubLocation + "\n" + "Type: " + Type + "\n"
                 + "Adults :" + Adults + "\n" + "Children: " + Children + "\n" + "Pool: " + Pool + "\n" + "Jacuzzi: " + Jacuzzi + "\n"
                 + "Garden: " + Garden + "\n" + "ChildrensAttractions :" + ChildrensAttractions + "\n");
-        }                                                                                                
+        }
+
+
     }
 }
