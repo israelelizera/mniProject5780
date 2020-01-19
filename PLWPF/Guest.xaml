@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="Guest" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="guest" HorizontalAlignment="Left" Margin="300,41,0,0" TextWrapping="Wrap" Text="Guest" VerticalAlignment="Top" Width="80" Height="44" FontSize="30"/>
-        <Button x:Name="AddGuestRequestButton" Content="Add GuestRequest" HorizontalAlignment="Left" Margin="113,123,0,0" VerticalAlignment="Top" Width="523" Height="98" Click="AddGuestRequest_Click" FontSize="30" />
-        <Button x:Name="LoogForHostingUnitButton" Content="Look for free hostingUnits" HorizontalAlignment="Left" Margin="113,239,0,0" VerticalAlignment="Top" Width="523" Height="101" Click="LookingForHostingUnit_Click" FontSize="30"/>
+        <TextBlock x:Name="guest" HorizontalAlignment="Left" Margin="299,23,0,0" TextWrapping="Wrap" Text="Guest" VerticalAlignment="Top" Width="80" Height="44" FontSize="30"/>
+        <Button x:Name="AddGuestRequestButton" Content="Add GuestRequest" HorizontalAlignment="Left" Margin="113,82,0,0" VerticalAlignment="Top" Width="523" Height="98" Click="AddGuestRequest_Click" FontSize="30" />
+        <Button x:Name="LoogForHostingUnitButton" Content="Look for free hostingUnits" HorizontalAlignment="Left" Margin="113,197,0,0" VerticalAlignment="Top" Width="523" Height="101" Click="LookingForHostingUnit_Click" FontSize="30"/>
+        <Button x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="113,317,0,0" VerticalAlignment="Top" Width="523" Height="73" FontSize="30" Click="button_Click"/>
 
     </Grid>
 </Window>

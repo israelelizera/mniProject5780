@@ -24,13 +24,16 @@ namespace PLWPF
         public AddOrder()
         {
             InitializeComponent();
-            order.HostingUnitKey = Convert.ToInt32( this.HostingUnitKeyBox.Text);
+            this.DataContext = order;
+          /*  order.HostingUnitKey = Convert.ToInt32( this.HostingUnitKeyBox.Text);
             order.GuestRequestKey= Convert.ToInt32(this.GuestRequestKeyBox.Text);
-            order.OrderKey = Convert.ToInt32(this.OrderKeyBox.Text);
+            order.OrderKey = Convert.ToInt32(this.OrderKeyBox.Text);*/
             this.StatusBox.ItemsSource = Enum.GetValues(typeof(BE.StatusOrder));
-            order.CreateDate = Convert.ToDateTime(this.CreateDatePicker);
-            order.OrderDate = Convert.ToDateTime(this.OrderDatePicker);
+            CreateDatePicker.SelectedDate = DateTime.Today;
+            OrderDatePicker.SelectedDate = DateTime.Today;
         }
+
+
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {

@@ -35,5 +35,11 @@ namespace PLWPF
            new  PLWPF.freeHostingUnits().Show();
             Close();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }

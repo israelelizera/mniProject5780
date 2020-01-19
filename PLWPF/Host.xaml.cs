@@ -35,5 +35,11 @@ namespace PLWPF
             new MainWindow().Show();
             Close();
         }
+
+        private void Add_order_Click(object sender, RoutedEventArgs e)
+        {
+            new AddOrder().Show();
+            Close();
+        }
     }
 }
