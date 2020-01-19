@@ -110,9 +110,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\AddGuestRequest.datasource" />
     <None Include="Properties\DataSources\App.datasource" />
-    <None Include="Properties\DataSources\BE.BankAccount.datasource" />
     <None Include="Properties\DataSources\BE.Configuration.datasource" />
-    <None Include="Properties\DataSources\BE.GuestRequest.datasource" />
     <None Include="Properties\DataSources\BE.Host.datasource" />
     <None Include="Properties\DataSources\BE.HostingUnit.datasource" />
     <None Include="Properties\DataSources\BE.Order.datasource" />
@@ -131,7 +129,6 @@
     <None Include="Properties\DataSources\BL.BLexception+UnvailableHostingUnitException.datasource" />
     <None Include="Properties\DataSources\BL.BLexception.datasource" />
     <None Include="Properties\DataSources\BL.BL_imp.datasource" />
-    <None Include="Properties\DataSources\BL.IBL.datasource" />
     <None Include="Properties\DataSources\MainWindow.datasource" />
     <None Include="Properties\DataSources\PLWPF.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\PLWPF.Properties.Settings.datasource" />

@@ -13,15 +13,17 @@ namespace PLWPF
         public AddGuestRequest()
         {
             InitializeComponent();
+
             guestRequest = new BE.GuestRequest();
+
             GuestRequestDetails.DataContext = guestRequest;
-            guestRequest.PrivateName=(this.PrivateNameBox.Text);
-            this.ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
-            this.PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            this.TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
+            
+            ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
+            PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
+            TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
 
             bL = new BL.BL_imp();
         }
