@@ -16,20 +16,18 @@
         <TextBlock Text="capacity:" Margin="20,177,0,316" FontSize="16" Height="25" Width="130" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <TextBox x:Name="HostingUnitName" Margin="100,80,0,413" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding HostingUnitName}"/>
+        <TextBox x:Name="Capacity" Margin="100,178,0,315" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Capacity}"/>
+
+        <ComboBox x:Name="Location" Margin="100,114,0,379" Width="130" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" SelectedItem="{Binding Location}"/>
+        <ComboBox x:Name="KindOfUnit" Margin="100,148,0,345" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedItem="{Binding Type}"/>
+
+        <CheckBox x:Name="Pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,214,0,0" FontSize="16" IsChecked="{Binding Pool}"/>
+        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,289,0,0" FontSize="16" IsChecked="{Binding jacuzzi}"/>
+        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,264,0,0" FontSize="16" IsChecked="{Binding Garden}"/>
+        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" Margin="20,239,0,259" FontSize="16" Width="178" IsChecked="{Binding ChildrensAttractions}" />
 
         <Button x:Name="add" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="80" Margin="278,0,92,92" Click="Add_Click" Height="35" FontSize="18" FontWeight="Bold"/>
         <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="92,391,0,0" Click="Cancel_Click" Height="35" FontSize="20" FontWeight="Bold"/>
-
-        <ComboBox x:Name="Location" Margin="100,114,0,379" Width="130" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" SelectedItem="{Binding Location}"/>
-
-        <ComboBox x:Name="KindOfUnit" Margin="100,148,0,345" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedItem="{Binding Type}"/>
-
-        <TextBox x:Name="capacity" Margin="100,178,0,315" Width="130" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding capacity}"/>
-
-        <CheckBox x:Name="pool" Content="pool" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,214,0,0" FontSize="16"/>
-        <CheckBox x:Name="Jacuzzi" Content="Jacuzzi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,289,0,0" FontSize="16"/>
-        <CheckBox x:Name="Garden" Content="Garden" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,264,0,0" FontSize="16"/>
-        <CheckBox x:Name="ChildrensAttractions" Content="ChildrensAttractions" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,239,0,0" FontSize="16" />
 
     </Grid>
 </Window>

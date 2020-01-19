@@ -35,8 +35,6 @@ namespace PLWPF
 
             EntryDatePicker.SelectedDate = DateTime.Now;
             ReleaseDatePicker.SelectedDate = DateTime.Now;
-
-
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)

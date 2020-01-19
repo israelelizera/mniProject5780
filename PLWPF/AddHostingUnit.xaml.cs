@@ -20,8 +20,11 @@ namespace PLWPF
 
             HostingUnitDetails.DataContext = HostingUnit;
 
+            Location.ItemsSource = Enum.GetValues(typeof(BE.Location));
+            KindOfUnit.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
 
-            
+            Location.SelectedIndex = 0;
+            KindOfUnit.SelectedIndex = 0;          
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -30,18 +33,10 @@ namespace PLWPF
 
             try
             {
-                HostingUnit.HostingUnitName = HostingUnitName.Text;
-                HostingUnit.Location = (BE.Location)Location.SelectedIndex;
-                HostingUnit.Type = (BE.KindOfUnit)KindOfUnit.SelectedIndex;
-                HostingUnit.capacity = int.Parse(capacity.Text);
-                HostingUnit.Pool = (bool)pool.IsChecked;
-                HostingUnit.ChildrensAttractions = (bool)ChildrensAttractions.IsChecked;
-                HostingUnit.Garden = (bool)Garden.IsChecked;
-                HostingUnit.Jacuzzi = (bool)Jacuzzi.IsChecked;
                 bL.addHostingUnit(HostingUnit);
-                HostingUnit = new BE.HostingUnit();
 
-                HostingUnitName.ClearValue(TextBox.TextProperty);
+                HostingUnit = new BE.HostingUnit();
+                HostingUnitDetails.DataContext = HostingUnit;
             }
             catch (Exception ex)
             {

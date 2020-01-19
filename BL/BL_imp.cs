@@ -84,7 +84,7 @@ namespace BL
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
                 throw new BLexception.InvalidHostingUnitNameException();
 
-            if (hostingUnit.capacity <= 0)
+            if (hostingUnit.Capacity <= 0)
                 throw new BLexception.InvalidCapacityException();
 
             try
@@ -102,7 +102,7 @@ namespace BL
             if (hostingUnit.HostingUnitName == "" || hostingUnit.HostingUnitName == null)
                 throw new BLexception.InvalidHostingUnitNameException();
 
-            if (hostingUnit.capacity <= 0)
+            if (hostingUnit.Capacity <= 0)
                 throw new BLexception.InvalidCapacityException();
             try
             {
@@ -118,7 +118,7 @@ namespace BL
         {
             //Checks if there is an open invitation for this hosting unit
             var hostingUnitOreder = from order in GetOrders()
-                                    where (order.HostingUnitKey == hostingUnit.hostinUnitKey) &&
+                                    where (order.HostingUnitKey == hostingUnit.HostinUnitKey) &&
                                             (order.status == StatusOrder.NotAddressed || order.status == StatusOrder.SentEmail)
                                     select order;
 
@@ -253,7 +253,7 @@ namespace BL
         public int OrdersSentOrClosed(HostingUnit hostingUnit)
         {
             var list = from order in GetOrders()
-                       where order.HostingUnitKey == hostingUnit.hostinUnitKey
+                       where order.HostingUnitKey == hostingUnit.HostinUnitKey
                        select order;
 
             return list.ToList().Count;
@@ -291,7 +291,7 @@ namespace BL
         public HostingUnit GetHostingUnitByKey(int key)
         {
             var varHostingUnit = from hostingUnit in getHostingUnits()
-                                 where hostingUnit.hostinUnitKey == key
+                                 where hostingUnit.HostinUnitKey == key
                                  select hostingUnit;
 
             if (!varHostingUnit.Any())
