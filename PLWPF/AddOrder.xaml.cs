@@ -19,9 +19,23 @@ namespace PLWPF
     /// </summary>
     public partial class AddOrder : Window
     {
+        BL.IBL BL = new BL.BL_imp();
+        BE.Order order = new BE.Order();
         public AddOrder()
         {
             InitializeComponent();
+            order.HostingUnitKey = Convert.ToInt32( this.HostingUnitKeyBox.Text);
+            order.GuestRequestKey= Convert.ToInt32(this.GuestRequestKeyBox.Text);
+            order.OrderKey = Convert.ToInt32(this.OrderKeyBox.Text);
+            this.StatusBox.ItemsSource = Enum.GetValues(typeof(BE.StatusOrder));
+            order.CreateDate = Convert.ToDateTime(this.CreateDatePicker);
+            order.OrderDate = Convert.ToDateTime(this.OrderDatePicker);
+        }
+
+        private void AddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            BL.addOrder(order);
+            Close();
         }
     }
 }
