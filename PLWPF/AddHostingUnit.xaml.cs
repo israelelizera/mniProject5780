@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 
 namespace PLWPF
@@ -26,12 +16,13 @@ namespace PLWPF
         public AddHostingUnit()
         {
             InitializeComponent();
+
             HostingUnit = new BE.HostingUnit();
             bL = new BL.BL_imp();
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
             bool success = true;
 
@@ -50,11 +41,6 @@ namespace PLWPF
 
                 HostingUnitName.ClearValue(TextBox.TextProperty);
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("check your input and try again");
-                success = false;
-            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -63,17 +49,14 @@ namespace PLWPF
 
             if (success)
             {
-                MessageBox.Show("The addition was successful!");
                 new Host().Show();
                 Close();
             }
 
         }
 
-        private void cancel(object sender, RoutedEventArgs e)
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            HostingUnit = new BE.HostingUnit();
-            HostingUnitName.ClearValue(TextBox.TextProperty);
             new Host().Show();
             Close();
         }

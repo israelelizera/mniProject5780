@@ -9,9 +9,9 @@ namespace DAL
         public dalExeptionIDalreadyExist() { }
 
     }
-    public class dalExeptionItemDoesntexist:Exception
+    public class dalExeptionItemDoesntExist:Exception
     {
-        public dalExeptionItemDoesntexist() {}
+        public dalExeptionItemDoesntExist() {}
     }
     public class dalExeptionMoreThanOneAnswer : Exception
     {

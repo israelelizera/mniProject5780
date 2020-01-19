@@ -26,5 +26,6 @@ namespace DAL
         List<GuestRequest> GetGuestRequests();
         List<Order> GetOrders();
         List<Host> GetHosts();
+        void updateHostingUnit(HostingUnit hostingUnit);
     }
 }

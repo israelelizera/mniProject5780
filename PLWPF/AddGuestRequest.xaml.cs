@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using BE;
 
 namespace PLWPF
 {
@@ -25,38 +13,39 @@ namespace PLWPF
         public AddGuestRequest()
         {
             InitializeComponent();
-            guestRequest = new GuestRequest();
-            this.GuestRequestDetails.DataContext = guestRequest;
+            guestRequest = new BE.GuestRequest();
+            GuestRequestDetails.DataContext = guestRequest;
             bL = new BL.BL_imp();
-            guestRequest.PrivateName = PrivateNameBox.Text;
-            //FamilyNameBox.Text = string.Format(FamilyNameBox.Text);
-            LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
-            TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
-            PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
-            EntryDatePicker.SelectedDate =Convert.ToDateTime(EntryDatePicker.SelectedDate);
-            ReleaseDatePicker.SelectedDate = Convert.ToDateTime(ReleaseDatePicker.SelectedDate);
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
+            bool success = true;
+
             try
             {
                 bL.addGuestRequest(guestRequest);
-                guestRequest = new GuestRequest();
-                this.DataContext = guestRequest;
+
+                guestRequest = new BE.GuestRequest();
+                GuestRequestDetails.DataContext = guestRequest;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                    throw ex;
+                MessageBox.Show(ex.Message);
+                success = false;
+            }
+
+            if (success)
+            {
+                new MainWindow().Show();
+                Close();
             }
         }
 
-        private void PrivateNameBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            
+            new MainWindow().Show();
+            Close();
         }
     }
 }
