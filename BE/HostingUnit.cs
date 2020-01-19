@@ -11,7 +11,7 @@ namespace BE
         public string HostingUnitName;
         public bool[,] Diary = new bool[12, 31];
         public int hostinUnitKey = Configuration.getHostingUnitKeyTempPlusOne();
-        public Location location;
+        public Location Location;
         public KindOfUnit Type;
         public int capacity;
 
@@ -22,7 +22,7 @@ namespace BE
 
         public override string ToString() 
         { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitKey +"\n"+
-                "location: " + location + "\n") ; }
+                "location: " + Location + "\n") ; }
 
         private List< DateTime> printDiary()
         {

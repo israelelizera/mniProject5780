@@ -177,28 +177,28 @@ namespace PL
             HostingUnit hostingUnit1 = new HostingUnit();
             hostingUnit1.HostingUnitName = "zimer1";
             hostingUnit1.Diary = Diary1;
-            hostingUnit1.location = Location.North;
+            hostingUnit1.Location = Location.North;
             hoster1.Add(hostingUnit1);
             bL.addHostingUnit(hostingUnit1);
 
             HostingUnit hostingUnit2 = new HostingUnit();
             hostingUnit2.HostingUnitName = "zimer2";
             hostingUnit2.Diary = Diary2;
-            hostingUnit2.location = Location.North;
+            hostingUnit2.Location = Location.North;
             hoster1.Add(hostingUnit2);
             bL.addHostingUnit(hostingUnit2);
 
             HostingUnit hostingUnit3 = new HostingUnit();
             hostingUnit3.HostingUnitName = "hotel1";
             hostingUnit3.Diary = Diary3;
-            hostingUnit3.location = Location.Center;
+            hostingUnit3.Location = Location.Center;
             hoster2.Add(hostingUnit3);
             bL.addHostingUnit(hostingUnit3);
 
             HostingUnit hostingUnit4 = new HostingUnit();
             hostingUnit4.HostingUnitName = "hotel2";
             hostingUnit4.Diary = Diary4;
-            hostingUnit4.location = Location.Center;
+            hostingUnit4.Location = Location.Center;
             hoster2.Add(hostingUnit4);
             bL.addHostingUnit(hostingUnit4);
 

@@ -15,6 +15,7 @@ namespace PLWPF
             InitializeComponent();
 
             guestRequest = new BE.GuestRequest();
+            bL = new BL.BL_imp();
 
             GuestRequestDetails.DataContext = guestRequest;
 
@@ -33,9 +34,9 @@ namespace PLWPF
             TypeBox.SelectedIndex = 1;
 
             EntryDatePicker.SelectedDate = DateTime.Now;
-            ReleaseDatePicker.SelectedDate = DateTime.Now;           
+            ReleaseDatePicker.SelectedDate = DateTime.Now;
 
-            bL = new BL.BL_imp();
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)

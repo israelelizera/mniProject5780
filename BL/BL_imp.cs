@@ -282,7 +282,7 @@ namespace BL
         public IEnumerable<IGrouping<Location, HostingUnit>> HostingUnitByLocation()
         {
             IEnumerable<IGrouping<Location, HostingUnit>> hostingUnits = from hostingUnit in getHostingUnits()
-                                                                         group hostingUnit by hostingUnit.location;
+                                                                         group hostingUnit by hostingUnit.Location;
             return hostingUnits;
         }
 

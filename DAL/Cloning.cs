@@ -79,7 +79,7 @@ namespace DAL
                 hostinUnitKey = hostingUnit.hostinUnitKey,              
                 HostingUnitName = hostingUnit.HostingUnitName,
                 Diary = hostingUnit.Diary,
-                location = hostingUnit.location,
+                Location = hostingUnit.Location,
                 capacity = hostingUnit.capacity,
                 Pool = hostingUnit.Pool,
                 Jacuzzi = hostingUnit.Jacuzzi,

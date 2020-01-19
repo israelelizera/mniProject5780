@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 
-
 namespace PLWPF
 {
     /// <summary>
@@ -12,13 +11,16 @@ namespace PLWPF
     {
         BE.HostingUnit HostingUnit;
         BL.IBL bL;
-
         public AddHostingUnit()
         {
             InitializeComponent();
 
             HostingUnit = new BE.HostingUnit();
             bL = new BL.BL_imp();
+
+            HostingUnitDetails.DataContext = HostingUnit;
+
+
             
         }
 
@@ -29,7 +31,7 @@ namespace PLWPF
             try
             {
                 HostingUnit.HostingUnitName = HostingUnitName.Text;
-                HostingUnit.location = (BE.Location)Location.SelectedIndex;
+                HostingUnit.Location = (BE.Location)Location.SelectedIndex;
                 HostingUnit.Type = (BE.KindOfUnit)KindOfUnit.SelectedIndex;
                 HostingUnit.capacity = int.Parse(capacity.Text);
                 HostingUnit.Pool = (bool)pool.IsChecked;
