@@ -64,6 +64,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="freeHostingUnits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Guest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Host.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +89,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="freeHostingUnits.xaml.cs">
+      <DependentUpon>freeHostingUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.xaml.cs">
+      <DependentUpon>Guest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Host.xaml.cs">
       <DependentUpon>Host.xaml</DependentUpon>

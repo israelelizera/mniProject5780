@@ -24,7 +24,7 @@
         <TextBlock x:Name="Adults" HorizontalAlignment="Left" Margin="392,97,0,0" TextWrapping="Wrap" Text="Adults:" VerticalAlignment="Top" RenderTransformOrigin="0.229,1.812"/>
         <TextBlock x:Name="Children" HorizontalAlignment="Left" Margin="392,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.229,1.812" Text="Children:"/>
 
-        <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="24" Margin="177,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding PrivateName}"   />
+        <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="24" Margin="177,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding Path= PrivateName, Mode=TwoWay}"   />
         <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="19" Margin="177,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding FamilyName}"   />
         <TextBox x:Name="MailBox" HorizontalAlignment="Left" Height="22" Margin="177,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding MailAddress}"/>
         <TextBox x:Name="AdultsBox" HorizontalAlignment="Left" Height="23" Margin="458,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Adults}"/>
