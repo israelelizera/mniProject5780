@@ -28,7 +28,7 @@ namespace PLWPF
             guestRequest = new GuestRequest();
             this.GuestRequestDetails.DataContext = guestRequest;
             bL = new BL.BL_imp();
-            PrivateNameBox.Text = string.Format(PrivateNameBox.Text);
+            guestRequest.PrivateName = PrivateNameBox.Text;
             //FamilyNameBox.Text = string.Format(FamilyNameBox.Text);
             LocationBox.ItemsSource = Enum.GetValues(typeof(BE.Location));
             TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
@@ -54,6 +54,9 @@ namespace PLWPF
             }
         }
 
-
+        private void PrivateNameBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
     }
 }

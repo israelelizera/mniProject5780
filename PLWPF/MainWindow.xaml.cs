@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using BL;
 
 namespace PLWPF
 {
@@ -7,6 +8,7 @@ namespace PLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();           
@@ -23,7 +25,10 @@ namespace PLWPF
             Close();
         }
 
-        private void button_Click_1(object sender, RoutedEventArgs e)
+
+
+
+        private void guestRequest_Click(object sender, RoutedEventArgs e)
         {
             new AddGuestRequest().Show();
         }

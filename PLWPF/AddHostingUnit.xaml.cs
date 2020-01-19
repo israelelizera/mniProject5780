@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace PLWPF
 {
     /// <summary>
@@ -27,6 +28,7 @@ namespace PLWPF
             InitializeComponent();
             HostingUnit = new BE.HostingUnit();
             bL = new BL.BL_imp();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,7 +45,6 @@ namespace PLWPF
                 HostingUnit.ChildrensAttractions = (bool)ChildrensAttractions.IsChecked;
                 HostingUnit.Garden = (bool)Garden.IsChecked;
                 HostingUnit.Jacuzzi = (bool)Jacuzzi.IsChecked;
-
                 bL.addHostingUnit(HostingUnit);
                 HostingUnit = new BE.HostingUnit();
 

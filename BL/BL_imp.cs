@@ -106,7 +106,7 @@ namespace BL
                 throw new BLexception.InvalidCapacityException();
             try
             {
-                dal.updateHostingUnit(hostingUnit);
+                //dal.updateHostingUnit(hostingUnit);
             }
             catch (Exception e)
             {

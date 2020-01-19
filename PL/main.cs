@@ -202,7 +202,7 @@ namespace PL
             hoster2.Add(hostingUnit4);
             bL.addHostingUnit(hostingUnit4);
 
-            bL.updateHostingUnit(hostingUnit4, hostingUnit1);
+           // bL.updateHostingUnit(hostingUnit4, hostingUnit1);
 
              foreach (var item in bL.getHostingUnits())
              {

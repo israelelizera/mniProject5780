@@ -12,8 +12,7 @@
         <TextBlock x:Name="PrivateName" HorizontalAlignment="Left" Margin="61,138,0,0" TextWrapping="Wrap" Text="Private name:" VerticalAlignment="Top"/>
         <TextBlock x:Name="FamilyName" HorizontalAlignment="Left" Margin="61,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Family name:"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="Mail" HorizontalAlignment="Left" Margin="61,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Mail:"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="24" Margin="199,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding privateName, Mode=OneWay}"   />
-        <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="19" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Text="{Binding FamilyName,Mode=OneWay,StringFormat='name {0} '}"   />
+        <TextBox x:Name="FamilyNameBox" HorizontalAlignment="Left" Height="19" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101"   />
         <TextBox x:Name="MailBox" HorizontalAlignment="Left" Height="23" Margin="129,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Text="{Binding MailAddress}"/>
         <Button x:Name="button1" Content="Add&#xA;" HorizontalAlignment="Left" Margin="691,359,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Height="31" FontWeight="Bold" FontStyle="Italic" Click="button1_Click"/>
         <TextBlock x:Name="Location" HorizontalAlignment="Left" Margin="392,158,0,0" TextWrapping="Wrap" Text="Location:" VerticalAlignment="Top" RenderTransformOrigin="0.229,1.812"/>
@@ -56,6 +55,7 @@
         <DatePicker x:Name="ReleaseDatePicker" HorizontalAlignment="Left" Margin="154,329,0,0" VerticalAlignment="Top" SelectedDate="{Binding ReleaseDate}"/>
         <TextBox x:Name="AdultsBox" HorizontalAlignment="Left" Height="23" Margin="458,78,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Adults}"/>
         <TextBox x:Name="ChildrenBox" HorizontalAlignment="Left" Height="23" Margin="473,125,0,0" TextWrapping="Wrap" Text="{Binding Children}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PrivateNameBox" HorizontalAlignment="Left" Height="23" Margin="199,137,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding PrivateName}"/>
 
 
 
