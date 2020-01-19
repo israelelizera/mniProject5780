@@ -8,44 +8,42 @@ namespace BE
     /// </summary>
     public class HostingUnit
     {
-        public string HostingUnitName;
+        public string HostingUnitName { get; set; }
         public bool[,] Diary = new bool[12, 31];
-        public int hostinUnitKey = Configuration.getHostingUnitKeyTempPlusOne();
-        public Location location;
-        public KindOfUnit Type;
-        public int capacity;
+        public int HostinUnitKey = Configuration.getHostingUnitKeyTempPlusOne();
+        public Location Location { get; set; }
+        public KindOfUnit Type { get; set; }
+        public int Capacity { get; set; }
+        public bool Pool { get; set; }
+        public bool Jacuzzi { get; set; }
+        public bool Garden { get; set; }
+        public bool ChildrensAttractions { get; set; }
 
-        public bool Pool;
-        public bool Jacuzzi;
-        public bool Garden;
-        public bool ChildrensAttractions;
-
-        public override string ToString() 
-        { return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n"+printDateTime(printDiary()) + "hostinUnitkey: " + hostinUnitKey +"\n"+
-                "location: " + location + "\n") ; }
-
-        private List< DateTime> printDiary()
+        public override string ToString()
         {
-            List<DateTime> retVal=new List<DateTime>();
+            return ("HostingUnitName: " + HostingUnitName + "\n" + "Diary (Busy dates):\n" + printDateTime(printDiary()) + "hostinUnitkey: " + HostinUnitKey + "\n" +
+                  "location: " + Location + "\n");
+        }
+        private List<DateTime> printDiary()
+        {
+            List<DateTime> retVal = new List<DateTime>();
             for (int i = 0; i < 12; i++)
             {
                 for (int j = 0; j < 31; ++j)
                     if (Diary[i, j])
-                        retVal.Add(new DateTime(DateTime.Now.Year, i+1, j+1));
+                        retVal.Add(new DateTime(DateTime.Now.Year, i + 1, j + 1));
             }
             return retVal;
         }
-
         private String printDateTime(List<DateTime> dateTimes)
         {
-            string retVal="";
+            string retVal = "";
             foreach (var item in dateTimes)
             {
-                retVal+= (string)(item.ToString())+" \n";
+                retVal += (string)(item.ToString()) + " \n";
             }
             return retVal;
         }
-
         /// <summary>
         /// The function receives date and days of vacation, and returns if the unit is available.
         /// </summary>
@@ -54,14 +52,13 @@ namespace BE
         /// <returns></returns>
         public bool AvailableOnDate(DateTime dateTime, int days)
         {
-            int startIndexInDiary = dateTime.Day+ (dateTime.Month) * 31;
+            int startIndexInDiary = dateTime.Day + (dateTime.Month) * 31;
             int endIndexInDiary = startIndexInDiary + days;
 
             for (int i = startIndexInDiary; i < endIndexInDiary; i++)
                 if (Diary[i / 12, i % 31]) return false;
             return true;
         }
-
         public bool AvailableOnDate(GuestRequest guestRequest)
         {
             DateTime EntryDate = guestRequest.EntryDate;
@@ -74,10 +71,9 @@ namespace BE
                 if (Diary[i / 12, i % 31]) return false;
             return true;
         }
-
         public virtual bool Equals(HostingUnit hostingUnit)
         {
-            return (hostinUnitKey == hostingUnit.hostinUnitKey &&            
+            return (HostinUnitKey == hostingUnit.HostinUnitKey &&
              HostingUnitName == hostingUnit.HostingUnitName &&
              Diary == hostingUnit.Diary);
         }

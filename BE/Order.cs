@@ -9,12 +9,12 @@ namespace BE
     /// </summary>
     public class Order
     {
-        public int HostingUnitKey;
-        public int GuestRequestKey;
-        public int OrderKey;
-        public StatusOrder status;
-        public DateTime CreateDate;
-        public DateTime OrderDate;
+        public int HostingUnitKey { get; set; }
+        public int GuestRequestKey { get; set; }
+        public int OrderKey { get; set; }
+        public StatusOrder status { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime OrderDate { get; set; }
 
         public override string ToString() {
             return ("HostingUnitKey: "+HostingUnitKey+"\n"+ "GuestRequestKey: "+ GuestRequestKey+"\n"

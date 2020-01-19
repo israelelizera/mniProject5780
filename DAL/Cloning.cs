@@ -76,11 +76,11 @@ namespace DAL
         {
             return new HostingUnit()
             {
-                hostinUnitKey = hostingUnit.hostinUnitKey,              
+                HostinUnitKey = hostingUnit.HostinUnitKey,              
                 HostingUnitName = hostingUnit.HostingUnitName,
                 Diary = hostingUnit.Diary,
-                location = hostingUnit.location,
-                capacity = hostingUnit.capacity,
+                Location = hostingUnit.Location,
+                Capacity = hostingUnit.Capacity,
                 Pool = hostingUnit.Pool,
                 Jacuzzi = hostingUnit.Jacuzzi,
                 Garden = hostingUnit.Garden,

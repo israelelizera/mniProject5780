@@ -67,7 +67,7 @@ namespace DAL
         {
             if (DataSource.hostingUnits != null)
             {
-                if (DataSource.hostingUnits.Exists(host => host.hostinUnitKey == hostingUnit.hostinUnitKey))
+                if (DataSource.hostingUnits.Exists(host => host.HostinUnitKey == hostingUnit.HostinUnitKey))
                     throw new dalExeptionIDalreadyExist();
 
                 DataSource.hostingUnits.Add(Cloning.Clon(hostingUnit));
@@ -83,32 +83,32 @@ namespace DAL
         public void updateHostingUnit(int hostingUnitKey, bool[,] diary)
         {
             var match = from hostU in DS.DataSource.hostingUnits
-                        where hostingUnitKey == hostU.hostinUnitKey
+                        where hostingUnitKey == hostU.HostinUnitKey
                         select hostU;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntExist();
             else if (match.Count() > 1)
                 throw new dalExeptionMoreThanOneAnswer();
-            match.ToList().RemoveAll(hostU => hostingUnitKey == hostU.hostinUnitKey);
+            match.ToList().RemoveAll(hostU => hostingUnitKey == hostU.HostinUnitKey);
             match.ToList()[0].Diary = diary;
             HostingUnit matchHosting = new HostingUnit();
             matchHosting = match.ToList()[0];
-            DataSource.hostingUnits.RemoveAll(hostU => hostingUnitKey == hostU.hostinUnitKey);
+            DataSource.hostingUnits.RemoveAll(hostU => hostingUnitKey == hostU.HostinUnitKey);
             DataSource.hostingUnits.Add(matchHosting);
         }
         public void updateHostingUnit(HostingUnit hostingUnit, HostingUnit hostingUnitUpdate)
         {
-            updateHostingUnit(hostingUnit.hostinUnitKey, hostingUnitUpdate.Diary);
+            updateHostingUnit(hostingUnit.HostinUnitKey, hostingUnitUpdate.Diary);
         }
 
         public void deleteHostingUnit(HostingUnit hostingUnit)
         {
             var match = from hostU in DS.DataSource.hostingUnits
-                        where hostingUnit.hostinUnitKey == hostU.hostinUnitKey
+                        where hostingUnit.HostinUnitKey == hostU.HostinUnitKey
                         select hostU;
             if (match.Count() == 0)
                 throw new dalExeptionItemDoesntExist();
-            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.hostinUnitKey == hostU.GuestRequestKey);
+            DataSource.guestRequests.RemoveAll(hostU => hostingUnit.HostinUnitKey == hostU.GuestRequestKey);
         }
 
         //Order
@@ -178,7 +178,7 @@ namespace DAL
 
         public void updateHostingUnit(HostingUnit hostingUnit)
         {
-            HostingUnit hosting = DataSource.hostingUnits.Find(HS => HS.hostinUnitKey == hostingUnit.hostinUnitKey);
+            HostingUnit hosting = DataSource.hostingUnits.Find(HS => HS.HostinUnitKey == hostingUnit.HostinUnitKey);
 
             if (hosting == null)
                 throw new dalExeptionItemDoesntExist();

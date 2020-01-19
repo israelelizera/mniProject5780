@@ -15,9 +15,10 @@ namespace PLWPF
             InitializeComponent();
 
             guestRequest = new BE.GuestRequest();
+            bL = new BL.BL_imp();
 
             GuestRequestDetails.DataContext = guestRequest;
-            
+
             ChildrenAttractionBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
             GardenBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
             JacuzziBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
@@ -25,7 +26,15 @@ namespace PLWPF
             PoolBox.ItemsSource = Enum.GetValues(typeof(BE.Request));
             TypeBox.ItemsSource = Enum.GetValues(typeof(BE.KindOfUnit));
 
-            bL = new BL.BL_imp();
+            ChildrenAttractionBox.SelectedIndex = 1;
+            GardenBox.SelectedIndex = 1;
+            JacuzziBox.SelectedIndex = 1;
+            LocationBox.SelectedIndex = 1;
+            PoolBox.SelectedIndex = 1;
+            TypeBox.SelectedIndex = 1;
+
+            EntryDatePicker.SelectedDate = DateTime.Now;
+            ReleaseDatePicker.SelectedDate = DateTime.Now;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -34,6 +43,7 @@ namespace PLWPF
 
             try
             {
+                guestRequest.RegistrationDate = DateTime.Now;
                 bL.addGuestRequest(guestRequest);
 
                 guestRequest = new BE.GuestRequest();

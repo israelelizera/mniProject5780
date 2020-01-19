@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="AddOrder" Height="450" Width="800">
+        Title="AddOrder">
     <Grid>
         <DatePicker x:Name="CreateDatePicker" HorizontalAlignment="Left" Margin="155,212,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="OrderDatePicker" HorizontalAlignment="Left" Margin="155,270,0,0" VerticalAlignment="Top"/>

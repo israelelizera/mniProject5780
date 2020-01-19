@@ -12,22 +12,22 @@ namespace BE
     {
         public int GuestRequestKey = Configuration.getGuestRequestKeyTempPlusOne();
 
-        public string PrivateName;
-        public string FamilyName;
-        public string MailAddress;
-        public StatusOrder status;
-        public DateTime RegistrationDate;
-        public DateTime EntryDate;
-        public DateTime ReleaseDate;
-        public Location location;
-        public Location SubLocation;
-        public KindOfUnit Type;
+        public string PrivateName { get; set; }
+        public string FamilyName { get; set; }
+        public string MailAddress { get; set; }
+        public StatusOrder status { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public DateTime EntryDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public Location location { get; set; }
+        public Location SubLocation { get; set; }
+        public KindOfUnit Type { get; set; }
         public int Adults { get; set; }
         public int Children { get; set; }
-        public Request Pool;
-        public Request Jacuzzi;
-        public Request Garden;
-        public Request ChildrensAttractions;
+        public Request Pool { get; set; }
+        public Request Jacuzzi { get; set; }
+        public Request Garden { get; set; }
+        public Request ChildrensAttractions { get; set; }
 
         public override string ToString()
         {
