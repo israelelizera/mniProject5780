@@ -16,11 +16,11 @@ namespace PLWPF
         {
             new Host().Show();
             Close();
-        }      
+        }
 
-        private void guest_request_Click(object sender, RoutedEventArgs e)
+        private void Guest_Click(object sender, RoutedEventArgs e)
         {
-            new AddGuestRequest().Show();
+            new Guest().Show();
             Close();
         }
 
