@@ -18,7 +18,7 @@ namespace PLWPF
             Close();
         }
 
-        private void guest_request_Click(object sender, RoutedEventArgs e)
+        private void Guest_Click(object sender, RoutedEventArgs e)
         {
             new Guest().Show();
             Close();
