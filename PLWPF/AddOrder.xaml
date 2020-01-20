@@ -7,18 +7,18 @@
         mc:Ignorable="d"
         Title="AddOrder">
     <Grid>
-        <DatePicker x:Name="CreateDatePicker" HorizontalAlignment="Left" Margin="155,212,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="CreateDatePicker" HorizontalAlignment="Left" Margin="155,203,0,0" VerticalAlignment="Top" Height="22"/>
         <DatePicker x:Name="OrderDatePicker" HorizontalAlignment="Left" Margin="155,270,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="CreateDate" HorizontalAlignment="Left" Margin="49,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Create Date:"/>
+        <TextBlock x:Name="CreateDate" HorizontalAlignment="Left" Margin="49,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Create Date:" Height="15"/>
         <TextBlock x:Name="OrderDate" HorizontalAlignment="Left" Margin="49,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Span Foreground="Black" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="OrderDate:"/></Span></TextBlock>
-        <ComboBox x:Name="StatusBox" HorizontalAlignment="Left" Margin="155,147,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Status}"/>
-        <TextBlock x:Name="Status" HorizontalAlignment="Left" Margin="49,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Status:"/>
-        <TextBlock x:Name="OrderKey" HorizontalAlignment="Left" Margin="49,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="OrderKey:"/>
-        <TextBlock x:Name="GuestRequestKey" HorizontalAlignment="Left" Margin="49,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="GuestRequestKey:"/>
-        <TextBlock x:Name="HostingUnitKey" HorizontalAlignment="Left" Margin="49,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="HostingUnit Key:" Width="124"/>
-        <TextBox x:Name="HostingUnitKeyBox" HorizontalAlignment="Left" Height="23" Margin="203,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding HostingUnitKey}"/>
-        <TextBox x:Name="GuestRequestKeyBox" HorizontalAlignment="Left" Height="23" Margin="222,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding GuestRequestKey}"/>
-        <TextBox x:Name="OrderKeyBox" HorizontalAlignment="Left" Height="23" Margin="232,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding OrderKey}"/>
+        <ComboBox x:Name="StatusBox" HorizontalAlignment="Left" Margin="155,141,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Status}" Height="21"/>
+        <TextBlock x:Name="Status" HorizontalAlignment="Left" Margin="49,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Status:" Height="15"/>
+        <TextBlock x:Name="OrderKey" HorizontalAlignment="Left" Margin="49,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="OrderKey:" Height="15"/>
+        <TextBlock x:Name="GuestRequestKey" HorizontalAlignment="Left" Margin="49,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="GuestRequestKey:" Height="15"/>
+        <TextBlock x:Name="HostingUnitKey" HorizontalAlignment="Left" Margin="49,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="HostingUnit Key:" Width="124" Height="15"/>
+        <TextBox x:Name="HostingUnitKeyBox" HorizontalAlignment="Left" Height="22" Margin="203,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding HostingUnitKey}"/>
+        <TextBox x:Name="GuestRequestKeyBox" HorizontalAlignment="Left" Height="22" Margin="222,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding GuestRequestKey}"/>
+        <TextBox x:Name="OrderKeyBox" HorizontalAlignment="Left" Height="22" Margin="232,110,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding OrderKey}"/>
         <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="643,429,0,0" VerticalAlignment="Top" Width="91" Height="46" Click="AddOrder_Click"/>
         <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="510,429,0,0" VerticalAlignment="Top" Width="91" Height="46" Click="CancelButton_Click"/>
 

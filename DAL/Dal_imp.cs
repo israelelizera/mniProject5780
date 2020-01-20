@@ -154,6 +154,14 @@ namespace DAL
         {
             updateOrder(order.HostingUnitKey, orderUpdate.status);
         }
+        public void updateOrder(Order order)
+        {
+            int index= DataSource.orders.FindIndex(HS => HS.OrderKey == order.OrderKey);
+
+            if (index == -1)
+                throw new dalExeptionItemDoesntExist();
+            DataSource.orders[index] = order;
+        }
 
         //get List
         public List<Order> GetOrders()

@@ -10,7 +10,7 @@
 
         <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Host" VerticalAlignment="Top" FontSize="48" Margin="172,5,172,0"/>
         <Button x:Name="Add_hosting_unit" Content="Add hosting unit" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" Click="Add_hosting_unit_Click" Margin="0,86,0,0"/>
-        <Button x:Name="Update_order" Content="Update order" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" Width="358" Margin="46,305,46,0"/>
+        <Button x:Name="Update_order" Content="Update order" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" Width="358" Margin="46,305,46,0" Click="Update_order_Click"/>
         <Button x:Name="Add_ordet" Content="Add order" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" Width="359" Margin="46,232,45,0" Click="Add_order_Click"/>
         <Button x:Name="Update_hosting_unit" Content="Update hosting unit" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Width="359" Height="68" Margin="46,159,45,0"/>
         <Button x:Name="Cencel" Content="Cencel" HorizontalAlignment="Center" FontSize="48" Width="358" Click="cencel_Click" VerticalAlignment="Top" Margin="47,378,45,0"/>

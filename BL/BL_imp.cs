@@ -106,7 +106,7 @@ namespace BL
                 throw new BLexception.InvalidCapacityException();
             try
             {
-                //dal.updateHostingUnit(hostingUnit);
+                dal.updateHostingUnit(hostingUnit);
             }
             catch (Exception e)
             {
@@ -154,10 +154,10 @@ namespace BL
                 throw e;
             }
         }
-        public void updateOrder(Order order, Order orderUpdate)
-        {
+        public void updateOrder(Order order)
+            {
             //can't change a closed order status
-            if (order.status != orderUpdate.status && order.status == StatusOrder.ClosedForCustomerResponse)
+            if ( order.status == StatusOrder.ClosedForCustomerResponse)
                 throw new BLexception.CloseOrderException();
 
             //Checks if the hosting unit is available on the requested date
@@ -169,7 +169,7 @@ namespace BL
 
             try
             {
-                dal.updateOrder(order, orderUpdate);
+                dal.updateOrder(order);
             }
             catch (Exception e)
             {

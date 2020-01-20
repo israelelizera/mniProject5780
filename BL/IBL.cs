@@ -20,7 +20,8 @@ namespace BL
 
         //-----------------------Order--------------------------------
         void addOrder(Order order);
-        void updateOrder(Order order, Order orderUpdate);
+        //void updateOrder(Order order, Order orderUpdate);
+        void updateOrder(Order order);
 
         //-----------------------gets--------------------------------
         List<HostingUnit> getHostingUnits();

@@ -20,16 +20,22 @@ namespace PLWPF
     public partial class UpdateOrder : Window
     {
         BL.IBL bL = new BL.BL_imp();
+        BE.Order order = new BE.Order();
         public UpdateOrder()
         {
             InitializeComponent();
+            this.DataContext = order;
+            this.StatusBox.ItemsSource = Enum.GetValues(typeof(BE.StatusOrder));
+            CreateDatePicker.SelectedDate = DateTime.Today;
+            OrderDatePicker.SelectedDate = DateTime.Today;
         }
 
 
 
-        private void UpdateOrder_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_Click_1(object sender, RoutedEventArgs e)
         {
-            bL.updateOrder(this.OrderKeyBox, this.StatusBox);
+            bL.updateOrder(order);
+            Close();
         }
     }
 }

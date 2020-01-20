@@ -20,6 +20,8 @@ namespace DAL
         //Order
         void addOrder(Order order);
         void updateOrder(Order order, Order orderUpdate);
+        void updateOrder(int OrderKey, StatusOrder status);
+        void updateOrder(Order order);
 
         //get List
         List<HostingUnit> getHostingUnits();
